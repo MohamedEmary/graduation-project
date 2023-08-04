@@ -4,6 +4,7 @@ author: [Mohamed Emary]
 abstract: Final result of graduation project ideas meeting discussion.
 date: \today
 toc: true
+numbersections: yes
 paper: a4
 keywords: [Markdown, File]
 theme: copenhagen
@@ -127,9 +128,9 @@ Stacks Included:
 
 2. **Learning Management System - Second Priority**
 
-The AI Recommendation System in E-Commerce Website is **Optional** depending on however we will be able to make it or not.
+The AI Recommendation System in the E-Commerce Website is **Optional** depending on however we will be able to implement it or not.
 
-Implementation Will be a **Web Application**
+---
 
 ## Who Will do What:
 
@@ -139,7 +140,7 @@ Implementation Will be a **Web Application**
 | Frontend | Dalia, Shrouk, Sara |
 | Backend & Database (NoSQL or SQL) | Abdelfattah, Moghieth, Emary |
 | Docs + UML Diagrams | Everyone |
-| UI - UX | Optional if we didn't use a template |
+| UI/UX | Optional if we didn't use a template |
 
 Everyone should learn at least the basic **Git & GitHub** usage.
 
