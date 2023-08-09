@@ -3,7 +3,7 @@ title: Graduation Project
 author: [Mohamed Emary]
 abstract: Final result of graduation project ideas meeting discussion.
 date: \today
-toc: true
+toc: yes
 numbersections: yes
 paper: a4
 keywords: [Markdown, File]
@@ -120,9 +120,9 @@ Stacks Included:
 
 ---
 
-# Final Ideas
+# Meeting Results
 
-## Final Project Ideas Based on Priority:
+## Final Project Ideas Based on Priority
 
 1. **E-Commerce Website with AI Recommendation System - First Priority**
 
@@ -132,7 +132,7 @@ The AI Recommendation System in the E-Commerce Website is **Optional** depending
 
 ---
 
-## Who Will do What:
+## Who Will do What
 
 | Task | Team Members |
 | ---- | ------------ |
