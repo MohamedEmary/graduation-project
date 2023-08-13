@@ -6,6 +6,11 @@ date: \today
 toc: yes
 numbersections: yes
 paper: a4
+geometry:
+- top=25mm
+- left=20mm
+- bottom=25mm
+- right=20mm
 keywords: [Markdown, File]
 theme: copenhagen
 linkcolor: blue
@@ -135,18 +140,20 @@ The AI Recommendation System in the E-Commerce Website is **Optional** depending
 ## Who Will do What
 
 | Task | Team Members |
-| ---- | ------------ |
-| ML & AI | Abdelfattah, Moghieth, Emary |
+| ------ | -------- |
+| ML & AI | Abdelfattah, Mohamed Abdelfattah, Mohamed Emary |
+|||
 | Frontend | Dalia, Shrouk, Sara |
-| Backend & Database (NoSQL or SQL) | Abdelfattah, Moghieth, Emary |
+|||
+| Backend & Database (NoSQL or SQL) | Abdelfattah, Mohamed Abdelfattah, Mohamed Emary |
+|||
 | Docs + UML Diagrams | Everyone |
+|||
 | UI/UX | Optional if we didn't use a template |
 
 Everyone should learn at least the basic **Git & GitHub** usage.
 
 But tasks are still flexible.
-
----
 
 ## Instructors We Will Try to Contact
 
