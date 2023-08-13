@@ -6,6 +6,7 @@ date: \today
 toc: yes
 numbersections: yes
 paper: a4
+fontsize: 12pt
 geometry:
 - top=25mm
 - left=20mm
@@ -122,8 +123,6 @@ Stacks Included:
 
 - Web (Front & Backend)
 - Database (NoSQL or SQL)
-
----
 
 # Meeting Results
 
