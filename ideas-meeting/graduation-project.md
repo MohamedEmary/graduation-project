@@ -1,6 +1,6 @@
 ---
 title: Graduation Project
-author: [Mohamed Emary]
+author: [Mohamed Emary, Mohamed Abdelfattah, Abdelfattah Zakaria, Sara Reda, Dalia Mohamed, Shrouk Elsayed]
 abstract: Final result of graduation project ideas meeting discussion.
 date: \today
 toc: yes
@@ -15,10 +15,15 @@ geometry:
 keywords: [Markdown, File]
 theme: copenhagen
 linkcolor: blue
+include-before:
+- '`\newpage{}`{=latex}'
 header-includes:
+ - \usepackage{afterpage}
  - \usepackage{fvextra}
  - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
+
+\pagebreak
 
 # Idea Per Team Member
 
