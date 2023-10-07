@@ -1,5 +1,5 @@
 ---
-title: My Pre-Meeting Notes
+title: Tools Meeting
 subtitle: 
 abstract: 
 ---
@@ -91,7 +91,8 @@ Then add:
   rebase = false
 [alias]
   br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) -
-   %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+   %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' 
+   --sort=-committerdate
 
   p = push
   st = status
