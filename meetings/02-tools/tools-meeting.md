@@ -76,7 +76,7 @@ GitHub is a website that hosts Git repositories.
 
 ![Git Stages](Git.png){width=450px}
 
-## Git Aliases
+## Some Git Configurations
 
 To open git settings `git config --global --edit` it will open in VSCode
 
