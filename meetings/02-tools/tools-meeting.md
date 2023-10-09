@@ -1,8 +1,6 @@
 ---
 title: Tools Meeting
 author: [Mohamed Emary, Mohamed Abdelfattah, Abdelfattah Zakaria, Sara Reda, Dalia Mohamed, Shrouk Elsayed]
-subtitle: 
-abstract: 
 ---
 
 ::: {.columns}
