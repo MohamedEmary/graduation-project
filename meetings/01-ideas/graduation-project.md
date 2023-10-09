@@ -2,25 +2,6 @@
 title: Graduation Project
 author: [Mohamed Emary, Mohamed Abdelfattah, Abdelfattah Zakaria, Sara Reda, Dalia Mohamed, Shrouk Elsayed]
 abstract: Final result of graduation project ideas meeting discussion.
-date: \today
-toc: yes
-numbersections: yes
-paper: a4
-fontsize: 12pt
-geometry:
-- top=25mm
-- left=20mm
-- bottom=25mm
-- right=20mm
-keywords: [Markdown, File]
-theme: copenhagen
-linkcolor: blue
-include-before:
-- '`\newpage{}`{=latex}'
-header-includes:
- - \usepackage{afterpage}
- - \usepackage{fvextra}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
 \pagebreak

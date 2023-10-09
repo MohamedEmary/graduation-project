@@ -1,5 +1,6 @@
 ---
 title: Tools Meeting
+author: [Mohamed Emary, Mohamed Abdelfattah, Abdelfattah Zakaria, Sara Reda, Dalia Mohamed, Shrouk Elsayed]
 subtitle: 
 abstract: 
 ---
@@ -33,7 +34,7 @@ abstract:
 
 - Better support for screen readers
 
-## Extensions
+# Extensions
 
 - `ms-vsliveshare.vsliveshare`
 - `CoenraadS.bracket-pair-colorizer-2`
@@ -60,7 +61,7 @@ abstract:
 - `WallabyJs.quokka-vscode`
 - `tldraw-org.tldraw-vscode`
 
-## Later Discussion
+# Later Discussion
 
 - IntelliCode
 - Mermaid & PlantUML
@@ -68,7 +69,9 @@ abstract:
 
 :::
 
-## What is Git & Github
+---
+
+# What is Git & Github
 
 Git is a VCS (Version Control System) that allows us to track changes in our code over time. It also allows us to collaborate with other developers by merging our code together.
 
@@ -76,7 +79,7 @@ GitHub is a website that hosts Git repositories.
 
 ![Git Stages](Git.png){width=450px}
 
-## Some Git Configurations
+## Some Git Configurations & Aliases
 
 To open git settings `git config --global --edit` it will open in VSCode
 
