@@ -1,0 +1,85 @@
+---
+title: \huge Week 2 Tasks
+---
+
+---
+
+::: {.columns .ragged columngap=2.5em}
+
+# This Week Tasks
+
+1. Encryption Algorithms
+
+2. Code of each encryption algorithm
+
+3. Numerical Methods Algorithms
+
+4. Improve algorithm by using the numbers you get from radio labeling as passwords
+
+5. Factors that affect the performance of encryption algorithms
+
+We may use last year project numerical methods project
+
+[Github Repo Link](https://github.com/MohamedEmary/graduation-project/tree/main/tasks/week-02)
+
+---
+
+# Encryption Algorithms
+
+1. AES
+
+2. DES
+
+3. RSA
+
+4. Diffie–Hellman
+
+5. SHA 1, 256, 3 algorithms
+
+**We may also add:**
+
+1. Blowfish
+
+2. Twofish
+
+3. Triple DES
+
+\columnbreak
+
+# Numerical Methods
+
+**Methods We already know:**
+
+1. Solving equations by factoring
+
+2. general formula for solving quadratic equations
+
+3. Graphical Solution
+
+4. Jacobi
+
+5. Gauss–Seidel
+
+6. Newton
+
+7. Bisection
+
+**Methods we don't know:**
+
+*From Dr PDF:*
+
+1. Trisection Algorithm
+
+2. Fixed point Algorithm
+
+3. Secant method
+
+4. False-Position Algorithm
+
+5. Hybrid Algorithm 1 and 2
+
+*Outside:*
+
+Bairstow's Method
+
+:::
