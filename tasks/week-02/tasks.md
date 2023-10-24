@@ -20,7 +20,7 @@ title: \huge Week 2 Tasks
 
 We may use last year project numerical methods project
 
-[Github Repo Link](https://github.com/MohamedEmary/graduation-project/tree/main/tasks/week-02)
+[Week Link on Github Repo](https://github.com/MohamedEmary/graduation-project/tree/main/tasks/week-02)
 
 ---
 
@@ -80,6 +80,6 @@ We may use last year project numerical methods project
 
 *Outside:*
 
-Bairstow's Method
+1. Bairstow's Method
 
 :::
