@@ -83,3 +83,36 @@ We may use last year project numerical methods project
 1. Bairstow's Method
 
 :::
+
+\pagebreak
+
+# Distribution of Tasks
+
+| Name                | Tasks                                             |
+| ------------------- | ------------------------------------------------- |
+| Mohamed Emary       | AES, Secant                                       |
+| Mohamed Abdelfattah | SHA-1, (Diffie–Hellman **OR** Hybrid Algorithm 2) |
+| Abdelfattah         | SHA-256, False-Position                           |
+| Dalia               | RSA, Fixed Point                                  |
+| Sara                | SHA-3, Hybrid Algorithm 1                         |
+| Shrouk              | DES, Trisection                                   |
+
+## Scheduled for a later time
+
+1. Blowfish
+
+2. Twofish
+
+3. Triple DES
+
+4. Bairstow's Method
+
+5. **Foctors that affect performance of encryption algorithms**
+
+## Very Important Notes
+
+- We all should review **Radio Labeling**.
+
+- Add the code of each algorithm to the github repo.
+
+- **Use the presentation template from [here](https://github.com/MohamedEmary/graduation-project/blob/main/tasks/week-02/template.pptx).**
