@@ -125,6 +125,6 @@ We may use last year project numerical methods project
 
 - **Use the presentation template from [here](https://github.com/MohamedEmary/graduation-project/blob/main/tasks/week-02/template.pptx).**
 
-- We all should review **Radio Labeling**.
+- We all should review **Laxman Saha Radio Labeling Algorithm**.
 
 - Add the code of each algorithm to the github repo.
