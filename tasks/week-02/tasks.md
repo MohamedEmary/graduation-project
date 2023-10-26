@@ -88,14 +88,22 @@ We may use last year project numerical methods project
 
 # Distribution of Tasks
 
-| Name                | Tasks                                             |
-| ------------------- | ------------------------------------------------- |
-| Mohamed Emary       | AES, Secant                                       |
-| Mohamed Abdelfattah | SHA-1, (Diffie–Hellman **OR** Hybrid Algorithm 2) |
-| Abdelfattah         | SHA-256, False-Position                           |
-| Dalia               | RSA, Fixed Point                                  |
-| Sara                | SHA-3, Hybrid Algorithm 1                         |
-| Shrouk              | DES, Trisection                                   |
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{lll}
+    \toprule
+    \multicolumn{1}{c}{\multirow{2}[4]{*}{Name}} & \multicolumn{2}{c}{Tasks} \\
+\cmidrule{2-3}           & \multicolumn{1}{l}{Encryption Algorithms} & \multicolumn{1}{l}{Numerical Methods} \\
+    \midrule
+    Mohamed Emary & AES    & Secant \\
+    Mohamed Abdelfattah & SHA-1 and Diffie–Hellman &  Hybrid Algorithm 2 If not Diffie–Hellman \\
+    Abdelfattah & SHA-256 & False-Position \\
+    Dalia  & RSA    & Fixed Point \\
+    Sara   & SHA-3  & Hybrid Algorithm 1 \\
+    Shrouk & DES    & Trisection \\
+    \bottomrule
+    \end{tabular}%
+\end{table}
 
 ## Scheduled for a later time
 
