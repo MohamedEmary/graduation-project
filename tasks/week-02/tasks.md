@@ -1,5 +1,6 @@
 ---
 title: \huge Week 2 Tasks
+date: October 26, 2023
 ---
 
 ---
