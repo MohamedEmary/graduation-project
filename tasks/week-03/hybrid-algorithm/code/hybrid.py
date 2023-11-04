@@ -1,23 +1,14 @@
 import sympy
-
-print("Enter function f(x):")
-f_str = input()
-f = sympy.lambdify(x, f_str)
-
-print("Enter lower bound:")
-a = float(input())
-
-print("Enter upper bound:")
-b = float(input())
-
-print("Enter tolerance:")
-tol = float(input())
-
-print("Enter max iterations for false position:")
-max_iter = int(input())
+import time
 
 
-def hybrid_root_finder(f, a, b, tol, max_iter):
+"""
+Todo:
+  - Return number of iterations and which method was applied
+"""
+
+
+def hybrid_root_finder(f, a, b, tol=10**(-10), max_iter=50):
 
     # False position attempts
     x0 = a
@@ -45,8 +36,48 @@ def hybrid_root_finder(f, a, b, tol, max_iter):
         else:
             a = c
 
-    return None
+    return "No root found"
 
+
+# ================================
+
+f = sympy.lambdify(sympy.Symbol('x'), 'x**3 + 4*x**2 - 10')
+
+a = 0  # lower bound of the interval
+b = 4  # upper bound of the interval
+
+total_time = 0
+num_runs = 500
+iter = 0
+for i in range(num_runs):
+    start_time = time.time()
+    result, iter = hybrid_root_finder(f, a, b)
+    end_time = time.time()
+    run_time = end_time - start_time
+    total_time += run_time
+
+average_time = total_time / num_runs
+
+print(
+    f"***Result over {num_runs} runs***\nAverage Time: {average_time}s \nIterations: {iter}\nRoot: {result}")
+
+
+# ================================
+
+"""
+# ================================
+f_str = input("Enter function f(x):")
+f = sympy.lambdify(x, f_str)
+
+a = float(input("Enter lower bound:"))
+
+b = float(input("Enter upper bound:"))
+
+tol = float(input("Enter tolerance:"))
+
+max_iter = int(input("Enter max iterations for false position:"))
 
 root = hybrid_root_finder(f, a, b, tol, max_iter)
 print("Root: ", root)
+# ================================
+"""
