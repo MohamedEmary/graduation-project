@@ -27,9 +27,7 @@ def bisection(f, a, b, tol=(10**(-10))):
     return x, i
 
 
-x = sympy.Symbol('x')
-func = x**3 + 4*x**2 - 10
-f = sympy.lambdify(x, sympy.sympify(func))
+f = sympy.lambdify(sympy.Symbol('x'), 'x**3 + 4*x**2 - 10')
 
 a = 0       # lower bound of the interval
 b = 4       # upper bound of the interval

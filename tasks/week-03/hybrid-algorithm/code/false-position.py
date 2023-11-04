@@ -17,9 +17,7 @@ def falsePosition(f, x0, x1, e=(10**(-10))):
     return x2, step
 
 
-x = sympy.Symbol('x')
-func = x**3 + 4*x**2 - 10
-f = sympy.lambdify(x, sympy.sympify(func))
+f = sympy.lambdify(sympy.Symbol('x'), 'x**3 + 4*x**2 - 10')
 
 x0 = 0  # lower bound of the interval
 x1 = 4  # upper bound of the interval
