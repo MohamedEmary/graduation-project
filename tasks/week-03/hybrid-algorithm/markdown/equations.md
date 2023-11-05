@@ -1,5 +1,5 @@
 ---
-title: Equations Used With Numerical Methods Algorithms
+title: \huge Numerical Methods Runtime Table
 date: November 2, 2023
 ---
 
