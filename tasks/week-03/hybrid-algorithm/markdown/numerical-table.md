@@ -73,7 +73,7 @@ These are the results we got with False Position method:
 
 \begin{table}[htbp]
   \centering
-  \tiny
+  \scriptsize
   \caption{False Position Table}
     \begin{tabular}{ccccccc}
     \toprule
@@ -119,7 +119,7 @@ These are the results we got with Bisection method:
 
 \begin{table}[htbp]
   \centering
-  \tiny
+  \scriptsize
   \caption{Bisection Table}
     \begin{tabular}{ccccccc}
     \toprule
@@ -165,7 +165,7 @@ These are the results we got with hybrid method:
 
 \begin{table}[htbp]
   \centering
-  \tiny
+  \scriptsize
   \caption{Hybrid Table}
     \begin{tabular}{ccccccc}
     \toprule
