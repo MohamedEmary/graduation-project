@@ -63,6 +63,8 @@ Table: Equations From Paper Table
 
 # Results
 
+These are the results we got with each method. We have run each method 500 times on each equation and took the average time to get the highest accuracy possible.
+
 ## False Position
 
 These are the results we got with False Position method:
