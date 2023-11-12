@@ -204,3 +204,21 @@ These are the results we got with hybrid method:
 \end{table}
 
 As we see from the table above the hybrid method tend to be faster and take much less iterations than both Bisection and False Position methods.
+
+\pagebreak
+
+## Final Results
+
+![Final Plots](../code/plot-results/Plots.svg)
+
+<!-- ### Iterations
+
+![Iterations Comparison](../code/plot-results/iterations-comparison.svg)
+
+### CPU Time
+
+![CPU Time Comparison](../code/plot-results/CPU-time-comparison.svg)
+
+### Function Value
+
+![Function Value Comparison](../code/plot-results/function-value-comparison.svg) -->
