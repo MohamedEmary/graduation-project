@@ -35,6 +35,8 @@ Table: Our Equations Table
 | $P9$  | $f(x)=\tan(x)$             | `math.tan(x)`                       | `[-1, 1]`      |
 | $P10$ | $f(x)=x^4-8x^3+18x^2-9x+1$ | `x**4 - 8*x**3 + 18*x**2 - 9*x + 1` | `[2, 4]`       |
 
+\pagebreak
+
 ## Equations From Paper
 
 We got these equations from [this paper](https://www.researchgate.net/publication/360883886_Novel_hybrid_algorithms_for_root_determining_using_advantages_of_open_methods_and_bracketing_methods) and we have used the same intervals too.
