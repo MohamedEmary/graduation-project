@@ -8,6 +8,8 @@ TODO:
   1. Make the table span pages instead of having each table in a separate page
 -->
 
+\pagebreak
+
 # Equations
 
 We have used the same 25 equations with each method and run each method (Bisection, False Position, and Hybrid) 500 times for each problem and then we have calculated the average time. We have also calculated the number of iterations each method have taken for each problem.
