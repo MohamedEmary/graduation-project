@@ -37,8 +37,6 @@ Table: Our Equations Table
 | $P9$  | $f(x)=\tan(x)$             | `math.tan(x)`                       | `[-1, 1]`      |
 | $P10$ | $f(x)=x^4-8x^3+18x^2-9x+1$ | `x**4 - 8*x**3 + 18*x**2 - 9*x + 1` | `[2, 4]`       |
 
-\pagebreak
-
 ## Equations From Paper
 
 We got these equations from [this paper](https://www.researchgate.net/publication/360883886_Novel_hybrid_algorithms_for_root_determining_using_advantages_of_open_methods_and_bracketing_methods) and we have used the same intervals too.
@@ -63,8 +61,6 @@ Table: Equations From Paper Table
 | $P24$ | $f(x)=e^x-3x-2$          | `(2.71828**x) - 3*x - 2`         | `[2,3]`   | Hoffman [22]    |
 | $P25$ | $f(x)=\sin(x)-x^2$       | `math.sin(x) - x**2`             | `[0.5,1]` | Chapra[17]      |
 
-\pagebreak
-
 # Results
 
 These are the results we got with each method. We have run each method 500 times on each equation and took the average time to get the highest accuracy possible.
@@ -73,15 +69,26 @@ These are the results we got with each method. We have run each method 500 times
 
 These are the results we got with False Position method:
 
-\begin{table}[htbp]
-  \centering
-  \scriptsize
-  \caption{False Position Table}
-    \begin{tabular}{ccccccc}
+<!-- \fontsize{5}{12}\selectfont -->
+\begin{scriptsize}
+\begin{longtable}{ccccccc}
+    \caption{False Position Table} \\
     \toprule
-    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{False Position Algorithm}} \\
-\cmidrule{2-7}           & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \cmidrule{2-7}
+    & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
     \midrule
+    \endfirsthead
+    \toprule
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \cmidrule{2-7}
+    & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
+    \midrule
+    \endhead
+    \hline
+    \endfoot
+    \bottomrule
+    \endlastfoot
     $P1$ & 80     & 0.000229008 & 1.3652300134140964 & -7.11E-15 & 1.3652300134140964 & 4 \\
     $P2$ & 33     & 4.399728775024414e-05 & 1.9999999999999978 & -8.88E-15 & 1.9999999999999978 & 4 \\
     $P3$ & 51     & 5.6000232696533204e-05 & 0.6931471805599422 & -6.22E-15 & 0.6931471805599422 & 2 \\
@@ -108,26 +115,32 @@ These are the results we got with False Position method:
     $P23$ & 45     & 7.994651794433594e-05 & 3.2215883990939416 & 6.328271240363392e-15 & 3.2215883990939416 & 4 \\
     $P24$ & 45     & 6.818151473999023e-05 & 2.1253934262332246 & -9.77E-15 & 2.1253934262332246 & 3 \\
     $P25$ & 17     & 2.703714370727539e-05 & 0.8767262153950554 & 7.882583474838611e-15 & 0.8767262153950554 & 1 \\
-    \bottomrule
-    \end{tabular}
-  \label{tab:addlabel}
-\end{table}
-
-\pagebreak
+\end{longtable}
+\end{scriptsize}
 
 ## Bisection Method
 
 These are the results we got with Bisection method:
 
-\begin{table}[htbp]
-  \centering
-  \scriptsize
-  \caption{Bisection Table}
-    \begin{tabular}{ccccccc}
+\begin{scriptsize}
+\begin{longtable}{ccccccc}
+    \caption{Bisection Table} \label{tab:addlabel} \\
     \toprule
     \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
-\cmidrule{2-7}           & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
+    \cmidrule{2-7}
+    & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
     \midrule
+    \endfirsthead
+    \toprule
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \cmidrule{2-7}
+    & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
+    \midrule
+    \endhead
+    \hline
+    \endfoot
+    \bottomrule
+    \endlastfoot
     $P1$  & 50     & 7.303380966186524e-05 & 1.3652300134140951 & -2.84E-14 & 1.3652300134140916 & 1.3652300134140987 \\
     $P2$  & 1      & 0      & 2      & 0      & 0      & 4 \\
     $P3$  & 49     & 4.200363159179687e-05 & 0.6931471805599436 & -3.33E-15 & 0.6931471805599401 & 0.6931471805599472 \\
@@ -154,26 +167,32 @@ These are the results we got with Bisection method:
     $P23$ & 48     & 6.889772415161133e-05 & 3.2215883990939425 & -5.55E-15 & 3.221588399093939 & 3.221588399093946 \\
     $P24$ & 48     & 4.5994281768798825e-05 & 2.1253934262332272 & 5.329070518200751e-15 & 2.1253934262332237 & 2.125393426233231 \\
     $P25$ & 47     & 6.799602508544923e-05 & 0.8767262153950632 & -8.88E-16 & 0.8767262153950597 & 0.8767262153950668 \\
-    \bottomrule
-    \end{tabular}
-  \label{tab:addlabel}
-\end{table}
-
-\pagebreak
+\end{longtable}
+\end{scriptsize}
 
 ## Hybrid Method
 
 These are the results we got with hybrid method:
 
-\begin{table}[htbp]
-  \centering
-  \scriptsize
-  \caption{Hybrid Table}
-    \begin{tabular}{ccccccc}
+\begin{scriptsize}
+\begin{longtable}{ccccccc}
+    \caption{Hybrid Table} \\
     \toprule
-    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Hybrid Algorithm (Bisection \& False Position)}} \\
-\cmidrule{2-7}           & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \cmidrule{2-7}
+    & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
     \midrule
+    \endfirsthead % This marks the end of the header for the first page
+    \toprule
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \cmidrule{2-7}
+    & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
+    \midrule
+    \endhead % This marks the end of the header for the subsequent pages
+    \hline
+    \endfoot % This marks the end of the footer for the intermediate pages
+    \bottomrule
+    \endlastfoot % This marks the end of the footer for the last page
     $P1$ & 10     & 3.6006927490234375e-05 & 1.3652300134140964 & -7.11E-15 & 1.365230013413779 & 1.3675001980274413 \\
     $P2$ & 1      & 1.9969940185546874e-06 & 2      & 0      & 0      & 4 \\
     $P3$ & 10     & 1.399993896484375e-05 & 0.6931471805599453 & 0      & 0.6931471805599334 & 0.695162706 \\
@@ -200,10 +219,8 @@ These are the results we got with hybrid method:
     $P23$ & 9      & 1.7997264862060548e-05 & 3.221588399093942 & 3.3306690738754696e-16 & 3.2215883990939242 & 3.2224168881395068 \\
     $P24$ & 9      & 1.2019157409667969e-05 & 2.125393426233225 & -7.11E-15 & 2.1253934262325003 & 2.1275213330097245 \\
     $P25$ & 7      & 1.1998653411865234e-05 & 0.8767262153950581 & 4.773959005888173e-15 & 0.8767262153886713 & 0.8772684454348731 \\
-    \bottomrule
-    \end{tabular}%
-  \label{tab:addlabel}%
-\end{table}
+\end{longtable}
+\end{scriptsize}
 
 As we see from the table above the hybrid method tend to be faster and take much less iterations than both Bisection and False Position methods.
 
@@ -211,9 +228,9 @@ As we see from the table above the hybrid method tend to be faster and take much
 
 ## Final Results
 
-![Final Plots](../code/plot-results/Plots.svg)
+<!-- ![Final Plots](../code/plot-results/Plots.svg) -->
 
-<!-- ### Iterations
+### Iterations
 
 ![Iterations Comparison](../code/plot-results/iterations-comparison.svg)
 
@@ -223,4 +240,4 @@ As we see from the table above the hybrid method tend to be faster and take much
 
 ### Function Value
 
-![Function Value Comparison](../code/plot-results/function-value-comparison.svg) -->
+![Function Value Comparison](../code/plot-results/function-value-comparison.svg)
