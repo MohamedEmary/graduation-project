@@ -3,11 +3,6 @@ title: \huge Numerical Methods Runtime Table
 date: November 2, 2023
 ---
 
-<!-- 
-TODO:
-  1. Make the table span pages instead of having each table in a separate page
--->
-
 \pagebreak
 
 # Equations
@@ -22,7 +17,7 @@ These are the equations that we have used with each method:
 
 In these equations we have tried to use different types of functions and intervals to test our methods.
 
-Table: Our Equations Table
+Table: Our Equations
 
 |  No   | Equation                   | Equation Code                       | Interval       |
 | :---: | :------------------------- | :---------------------------------- | :------------- |
@@ -41,7 +36,7 @@ Table: Our Equations Table
 
 We got these equations from [this paper](https://www.researchgate.net/publication/360883886_Novel_hybrid_algorithms_for_root_determining_using_advantages_of_open_methods_and_bracketing_methods) and we have used the same intervals too.
 
-Table: Equations From Paper Table
+Table: Equations From Paper
 
 |  No   | Equation                 | Equation Code                    | Interval  | Reference       |
 | :---: | :----------------------- | :------------------------------- | :-------- | :-------------- |
@@ -72,15 +67,15 @@ These are the results we got with False Position method:
 <!-- \fontsize{5}{12}\selectfont -->
 \begin{scriptsize}
 \begin{longtable}{ccccccc}
-    \caption{False Position Table} \\
+    \caption{False Position} \\
     \toprule
-    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{False Position Algorithm}} \\
     \cmidrule{2-7}
     & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
     \midrule
     \endfirsthead
     \toprule
-    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{False Position Algorithm}} \\
     \cmidrule{2-7}
     & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
     \midrule
@@ -124,7 +119,7 @@ These are the results we got with Bisection method:
 
 \begin{scriptsize}
 \begin{longtable}{ccccccc}
-    \caption{Bisection Table} \label{tab:addlabel} \\
+    \caption{Bisection} \label{tab:addlabel} \\
     \toprule
     \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
     \cmidrule{2-7}
@@ -176,15 +171,15 @@ These are the results we got with hybrid method:
 
 \begin{scriptsize}
 \begin{longtable}{ccccccc}
-    \caption{Hybrid Table} \\
+    \caption{Hybrid} \\
     \toprule
-    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Hybrid Algorithm}} \\
     \cmidrule{2-7}
     & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
     \midrule
     \endfirsthead % This marks the end of the header for the first page
     \toprule
-    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Bisection Algorithm}} \\
+    \multirow{2}[4]{*}{\textbf{Problem}} & \multicolumn{6}{c}{\textbf{Hybrid Algorithm}} \\
     \cmidrule{2-7}
     & \textbf{Iter} & \textbf{Avg CPU Time} & \textbf{Approximate Root} & \textbf{Function Value} & \textbf{Lower Bound} & \textbf{Upper Bound} \\
     \midrule
@@ -223,8 +218,6 @@ These are the results we got with hybrid method:
 \end{scriptsize}
 
 As we see from the table above the hybrid method tend to be faster and take much less iterations than both Bisection and False Position methods.
-
-\pagebreak
 
 ## Final Results
 
