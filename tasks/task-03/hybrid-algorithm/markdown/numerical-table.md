@@ -1,5 +1,5 @@
 ---
-title: \huge Numerical Methods Runtime Table
+title: \begin{title}\centering\vspace*{1cm}\rule{\textwidth}{0.05cm}\linebreak\vspace{0.5cm}{\huge\bfseries Numerical Methods Runtime Table \par}\vspace{0.1cm}\hrule\end{title}
 date: November 2, 2023
 ---
 
