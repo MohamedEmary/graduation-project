@@ -219,18 +219,32 @@ These are the results we got with hybrid method:
 
 As we see from the table above the hybrid method tend to be faster and take much less iterations than both Bisection and False Position methods.
 
-## Final Results
+## Conclusion
 
-<!-- ![Final Plots](../code/plot-results/Plots.svg) -->
+Our conclusions based on the tables and the plots are:
 
 ### Iterations
 
 ![Iterations Comparison](../code/plot-results/iterations-comparison.svg)
 
+The hybrid method demonstrates superior performance compared to both the bisection and false position methods in terms of the number of iterations required.
+
+As we see here in P21 the false position method have much more number of iterations than both hybrid and bisection methods which will lead to more CPU time as we will see in the next section.
+
 ### CPU Time
 
 ![CPU Time Comparison](../code/plot-results/CPU-time-comparison.svg)
 
+The hybrid method shows significant improvement over the bisection method in terms of CPU time, with a ratio of 21:4 .This translates to approximately 84% for the hybrid method and 16% for the bisection method.
+
+The hybrid method shows significant improvement over the false position method in terms of CPU time, with a ratio of 19:6 .This translates to approximately 76% for the hybrid method and 24% for the false position method.
+
 ### Function Value
 
 ![Function Value Comparison](../code/plot-results/function-value-comparison.svg)
+
+As a general trend, the hybrid method is faster than both the bisection and false position methods when it comes to finding the approximate root.
+
+The hybrid method outperforms both the bisection and false position methods in terms of function value, with smaller values that are closer to zero.
+
+The equation $f(x) = x^3 - 6x^2 + 11x - 6$ has two roots. In the false position and hybrid methods, the equation has a root at 1. On the other hand,  the bisection method identifies another root at approximately 2.0000000000000018 within the interval $[1, 2.5]$.
