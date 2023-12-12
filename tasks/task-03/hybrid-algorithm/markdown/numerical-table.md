@@ -1,13 +1,14 @@
 ---
 title: \begin{title}\centering\vspace*{1cm}\rule{\textwidth}{0.05cm}\linebreak\vspace{0.5cm}{\huge\bfseries Numerical Methods Runtime Table \par}\vspace{0.1cm}\hrule\end{title}
 date: November 2, 2023
+abstract: Efficient and accurate root-finding algorithms are critical in numerical analysis across science and engineering. Here we compare three methods - bisection, false position, and a hybrid technique - for solving nonlinear equations. The hybrid approach combines aspects of false position (an open method) and bisection (a bracketing method), leveraging the speed of the former and reliability of the latter. Extensive testing on 25 diverse sample equations shows the hybrid method requires significantly fewer iterations and less computation time to identify roots with similar or better accuracy versus the other two techniques. It reduces iterations and CPU time, while achieving function values closer to the desired zero. By integrating strengths of open and bracketing root-finders, the new hybrid method delivers faster, more efficient, and numerially stable performance in locating roots for a wide variety of equation types.
 ---
 
 \pagebreak
 
 # Equations
 
-We have used the same 25 equations with each method and run each method (Bisection, False Position, and Hybrid) 500 times for each problem and then we have calculated the average time. We have also calculated the number of iterations each method have taken for each problem.
+\lettrine{W}e have used the same 25 equations with each method and run each method (Bisection, False Position, and Hybrid) 500 times for each problem and then we have calculated the average time. We have also calculated the number of iterations each method have taken for each problem.
 
 We have also used the same tolerance for each method which is $10^{-14}$
 
