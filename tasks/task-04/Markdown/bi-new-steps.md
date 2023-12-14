@@ -2,7 +2,6 @@
 title: \begin{title}\centering\vspace*{1cm}\rule{\textwidth}{0.05cm}\linebreak\vspace{0.5cm}{\huge\bfseries Bi-New Algorithm \par}\vspace{0.1cm}\hrule\end{title}
 # title: \huge Bi-New Algorithm Steps
 date: December 13, 2023
-
 ---
 
 # Bi-New Algorithm Steps
@@ -35,8 +34,6 @@ date: December 13, 2023
 
 UTF-8 is a variable-length character encoding standard used for electronic communication. Defined by the Unicode Standard, the name is derived from Unicode Transformation Format – 8-bit. *Variable-length* character encoding means that different characters can take up a different number of bytes. In the context of UTF-8, it means that a single character can be represented using anywhere from 1 to 4 bytes.
 
-UTF-8 uses 8 bits so each character will be mapped to 2 hexadecimal digits since each hexadecimal number takes 4 bits. Then we will convert the result to decimal to be used in the polynomial.
-
 For example, standard ASCII characters (like 'a', 'b', '1', etc.) only require 1 byte in UTF-8. However, other characters, such as many emoji, accented letters, and characters from non-Latin scripts, require more bytes. This flexibility allows UTF-8 to efficiently represent the wide range of characters defined in the Unicode standard, while maintaining backward compatibility with ASCII.
 
 In UTF-8 encoding, a character is not always 1 byte. It can be anywhere from 1 to 4 bytes depending on the specific character. This is what allows UTF-8 to represent a wide range of characters from various languages and symbol sets, including those outside the ASCII range.
@@ -63,7 +60,6 @@ Is there any wrong info here
 paraphrase 
 
 Make Flow Chart for decryption process
-
 -->
 
 <!-- 
