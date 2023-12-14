@@ -12,7 +12,7 @@ def generate_random_text(bits=80):
     return text
 
 
-def convert_to_decimal_hexa(text):
+def convert_to_decimal_and_hexa(text):
     # encode the text as a bytes object using utf-8
     bytes = text.encode("utf-8")
     # convert the bytes object to an integer using int.from_bytes
@@ -34,7 +34,7 @@ def convert_to_text(number):
 # test the function
 random_text = generate_random_text()
 print(random_text)
-decimal_num, hexa_num = convert_to_decimal_hexa(random_text)
+decimal_num, hexa_num = convert_to_decimal_and_hexa(random_text)
 print(hexa_num)
 print(decimal_num)
 string = convert_to_text(decimal_num)
