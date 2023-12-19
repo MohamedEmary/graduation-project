@@ -31,11 +31,26 @@ def convert_to_text(number):
     return text
 
 
-# test the function
-random_text = generate_random_text()
-print(random_text)
-decimal_num, hexa_num = convert_to_decimal_and_hexa(random_text)
-print(hexa_num)
-print(decimal_num)
-string = convert_to_text(decimal_num)
-print(string)
+# # test the function
+# random_text = generate_random_text()
+# print(random_text)
+# decimal_num, hexa_num = convert_to_decimal_and_hexa(random_text)
+# print(hexa_num)
+# print(decimal_num)
+# string = convert_to_text(decimal_num)
+# print(string)
+
+
+# Clear the file content first
+with open("random_text.csv", "w") as file:
+    file.write("")
+# generate 100 random texts
+for i in range(100):
+    random_text = generate_random_text()
+    # add each random text to a line in the file
+    with open("random_text.csv", "a") as file:
+        file.write(random_text + "\n")
+# remove the last newline character
+with open("random_text.csv", "rb+") as file:
+    file.seek(-1, 2)
+    file.truncate()
