@@ -46,6 +46,14 @@ $$
 
    3. With **Secant Method** we need two initial points as it is a bracketing method too so we will use: $[\lfloor\phi\rfloor, \lceil\phi\rceil]$. For example if $\phi=2.5$ then the initial points will be $[2, 3]$.
 
+$$
+\text{Initial guesses} = \begin{cases}
+[\text{round}(-\phi), \text{round}(\phi)] & \text{for Bisection Method} \\
+\text{round}(\phi) & \text{for Newton Method} \\
+[\lfloor\phi\rfloor, \lceil\phi\rceil] & \text{for Secant Method}
+\end{cases}
+$$
+
 ## Decryption Process
 
 1. You as a receiver should have the same polynomial $P_1$ that was used to encrypt the message (our algorithm is a symmetric algorithm so both parties should have the same polynomial). You will also get the encrypted message $r$ which is the root of the polynomial $P_2$.
@@ -76,33 +84,46 @@ We may also (still not sure) do the following:
 
 2. Use a changing number of rotations agreed upon by both parties instead of just 1 rotation. The number of rotations will not exceed the degree of the polynomial as we rotate in a circular way so it's just useless to rotate more than the degree of the polynomial, one way to ensure this is to use mod % operation.
 
-<!-- 
-TODO Ask BingChat:
+# Steps Flowcharts
 
-Is there any wrong info here
+::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
+
+## Encryption Process
+
+```{.mermaid caption="Encryption Steps" width=45%}
+graph TD
+    A[Specify the degree of the polynomial d. For example a random degree] --> B[Generate d+1 random data points]
+    B --> C[Get the polynomial P_1 using Lagrange Interpolation]
+    C --> D[Convert the text to into a decimal integer t using UTF-8 encoding]
+    D --> E[Subtract t from the polynomial constant term to get the new polynomial P_2]
+    E --> F[Find the root of P_2 using a root finding method]
+    F --> H{Root Finding Method}
+    H --> I[Bisecting Method]
+    H --> J[Newton Method]
+    H --> K[Secant Method]
+    H --> L[Hybrid Method]
+    I --> G[The root r is the encrypted message to be sent to the receiver]
+    J --> G
+    K --> G
+    L --> G
+```
+
+\columnbreak
+
+## Decryption Process
+
+```{.mermaid caption="Decryption Steps" width=45%}
+graph TD
+    A[Receive the encrypted message r which is the root of P_2] --> B[Substitute r in the polynomial P_1 to get the value of t. t is the UTF-8 encoded text.]
+    B --> C[Convert t back into text using UTF-8 decoding]
+```
+
+:::
+
+<!--
+TODO Ask BingChat:
 
 paraphrase 
 
 Make Flow Chart for decryption process
--->
-
-<!-- 
-Encryption Flowchart
-
-```plantuml
-@startuml
-start
-:Specify the degree of the polynomial <math>d</math>;
-:Generate <math>d+1</math> random data points;
-:Get the polynomial <math>P_1</math> that passes through these points using **Lagrange Interpolation**;
-:Convert the text to encrypt into a decimal number <math>m</math> using **UTF-8** encoding;
-:Substitute <math>m</math> from the polynomial constant term to get the new polynomial <math>P_2</math>;
-:Find the root of <math>P_2</math> using **Bisecting Method** and save it into <math>r_1</math>;
-:Left rotate the coefficients of <math>P_2</math> by 1 position to get the new polynomial <math>P_3</math>;
-:Replace the constant term of <math>P_3</math> with the negative value of <math>r_1</math> to get the new polynomial <math>P_4</math>;
-:Find the root of <math>P_4</math> using **Newton Method** and save it into <math>r_2</math>;
-:The root <math>r_2</math> is the encrypted message;
-stop
-@enduml
-```
 -->
