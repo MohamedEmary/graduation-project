@@ -30,7 +30,7 @@ If you noticed in step 6 we used the root finding method to find the root of the
 2. Based on the degree of the polynomial you specified, you will need to find the N~th~ root of the constant term of the polynomial.
 
 $$
-\text{nth\_root} = \begin{cases}
+N_{th}\_Root = \begin{cases}
     \frac{\text{degree}}{2} & \text{if } 1 \leq \text{degree} \leq 10 \\
     \frac{\text{degree}}{3} & \text{if } 10 \leq \text{degree} \leq 15 \\
     \text{degree} & \text{otherwise}
@@ -74,16 +74,6 @@ ASCII is limited compared to UTF-8 ASCII character encoding uses 7 bits for each
 
 However, ASCII is often stored in 8-bit bytes for convenience, with the extra bit typically used as a parity bit for error checking in some systems, or left as 0 in systems that don't require error checking. This 8-bit version is often referred to as "extended ASCII" or "ASCII-8", but it's not a standard and the extra bit's usage can vary between systems.
 
-# Some Notes
-
-The changes we will make to the algorithm will include replacing both bisection and newton methods with the hybrid method to achieve a faster performance.
-
-We may also (still not sure) do the following:
-
-1. Use another algorithm faster than Lagrange Interpolation to find the polynomial. Newton Interpolation is a good candidate.
-
-2. Use a changing number of rotations agreed upon by both parties instead of just 1 rotation. The number of rotations will not exceed the degree of the polynomial as we rotate in a circular way so it's just useless to rotate more than the degree of the polynomial, one way to ensure this is to use mod % operation.
-
 # Steps Flowcharts
 
 ::: {.columns .ragged columngap=2.5em column-rule="0.0pt solid black"}
@@ -119,6 +109,16 @@ graph TD
 ```
 
 :::
+
+# Some Notes
+
+The changes we will make to the algorithm will include replacing both bisection and newton methods with the hybrid method to achieve a faster performance.
+
+We may also (still not sure) do the following:
+
+1. Use another algorithm faster than Lagrange Interpolation to find the polynomial. Newton Interpolation is a good candidate.
+
+<!-- 2. If we implemented Bi-New we may use a changing number of rotations agreed upon by both parties instead of just 1 rotation. The number of rotations will not exceed the degree of the polynomial as we rotate in a circular way so it's just useless to rotate more than the degree of the polynomial, one way to ensure this is to use mod % operation. -->
 
 <!--
 TODO Ask BingChat:
