@@ -31,7 +31,7 @@ $$
 7. the array will be used to shuffle the points.
 8. After Having the points apply lagrange/Newton interpolation to get the polynomial.
 
-```mermaid
+```{.mermaid caption="Algorithm Steps" width=60%}
 graph TD
   A[Get input from user] --> B[Input handling and validation]
   B --> C[Input is x+, x-, y, s, r]
@@ -47,4 +47,111 @@ graph TD
   F --> G[depending on the random state, the array will be shuffled]
   G --> H[the array will be used to shuffle the points]
   H --> I[After Having the points apply lagrange/Newton interpolation to get the polynomial]
+```
+
+# Diagrams
+
+Diagrams to be used in our project.
+
+1. Use Case Diagram (Sara)
+2. Activity Diagram (Abdelfattah)
+3. DFD & Context Diagram (Dalia)
+4. Class Diagram & State Diagram (Shrouk)
+5. ERD (Mohamed Emary)
+6. Sequence Diagram (Mohamed Abdelfattah)
+
+```{.plantuml caption="Sample Use Case" width=30%}
+@startuml
+left to right direction
+actor User
+actor Admin
+
+rectangle "Messaging Website" {
+    User --> (Login)
+    User --> (Logout)
+    User --> (Send Message)
+    User --> (Read Message)
+    User --> (Delete Message)
+    User --> (Search Message)
+    User --> (Create Group Chat)
+    User --> (Join Group Chat)
+    User --> (Leave Group Chat)
+    User --> (Send Message in Group Chat)
+    User --> (Read Message in Group Chat)
+
+    (Send Message) .> (Upload Attachment) : includes
+    (Read Message) .> (Download Attachment) : includes
+    (Send Message in Group Chat) .> (Upload Attachment) : includes
+    (Read Message in Group Chat) .> (Download Attachment) : includes
+
+    Admin --> (Login)
+    Admin --> (Logout)
+    Admin --> (Delete User)
+    Admin --> (Delete Message)
+    Admin --> (Delete Group Chat)
+}
+@enduml
+```
+
+## Use Case Diagram
+
+**What normal user can do:**
+
+1. Sign Up
+2. Login
+3. Send Text Message
+4. Send Images
+5. Search For Messages
+6. Delete Messages
+7. Read Message in Group Chat
+8. Change Profile Picture
+9. Update Profile Information (Name, Email, Password)
+10. Edit Messages
+11. Logout
+
+**What admin can do:**
+
+1. Sign Up
+2. Login
+3. Ban/Unban Users
+4. Delete Users
+5. Delete Messages
+6. Update Application Content
+7. View System Statistics in a Dashboard
+8. Logout
+
+## Initial Use Case Diagram
+
+```mermaid
+%% Context Diagram
+graph LR
+subgraph External
+    U[User] -->|Registration<br>Login<br>Send Message<br>View Inbox|M
+    API(Third Party APIs) --> M
+    A(Advertiser) --> |View Analytics|M
+end
+
+M[Messaging Website]
+
+M --> |User Data<br>Message Data<br>Analytics Data|DB[(Database)]
+```
+
+```mermaid
+graph TB
+  subgraph User
+    A[User 1]
+    B[User 2]
+  end
+
+  subgraph MessagingWebsite
+    C[Server]
+    D[Database]
+  end
+
+  A -->|Sends message| C
+  B -->|Sends message| C
+  C -->|Stores message| D
+  D -->|Retrieves message| C
+  C -->|Delivers message| A
+  C -->|Delivers message| B
 ```
