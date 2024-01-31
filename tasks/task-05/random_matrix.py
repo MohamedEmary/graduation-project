@@ -2,27 +2,16 @@ import numpy as np
 import pandas as pd
 
 
-def random_array(start, end, vals):
-    res = []
-    for i in range(vals):
-        res.append(np.random.randint(start, end))
-    return res
+def random_matrix(rows_num, vals):
+    return [np.random.randint(start, end, vals) for _ in range(rows_num)]
 
 
-def random_matrix(rows_num, arr):
-    mat = []
-    # shuffle the values in arr to get a random matrix
-    for i in range(rows_num):
+start = 0
+end = 100
+top_power = 14
+matrix_samples = 100
 
-        np.random.seed(i)  # set a different seed for each row
-        arr_shuffled = np.random.permutation(arr)
-        mat.append(list(arr_shuffled))
-    return mat
-
-
-numbers_arr = random_array(0, 99, 14)
-mat = random_matrix(100, numbers_arr)
-# save the matrix in a csv file
-column_names = [str(i) for i in range(14)]
+mat = random_matrix(matrix_samples, top_power)
+column_names = [str(i) for i in range(top_power)]
 pd.DataFrame(mat, columns=column_names).to_csv(
     "random_matrix.csv", header=True, index=None, sep=',')
