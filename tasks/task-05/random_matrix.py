@@ -6,8 +6,8 @@ def random_matrix(rows_num, vals):
     return [np.random.randint(start, end, vals) for _ in range(rows_num)]
 
 
-start = 0
-end = 100
+start = 1000000
+end = 1000100
 top_power = 14
 matrix_samples = 100
 
