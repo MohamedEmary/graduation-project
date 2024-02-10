@@ -18,7 +18,7 @@ This paper delves into the intricate details of the algorithm, meticulously expl
 
 At the heart of our innovative encryption algorithm lies a powerful mathematical tool: root finding methods. These methods, while seemingly abstract, play a crucial role in ensuring the security and efficiency of our solution. But before we delve into their specific application, let's unpack what they are and why they hold such significance.
 
-In essence, root finding methods aim to solve the equation $f(x) = 0$, where $f(x)$ is any function. They essentially seek the "roots" of the function, which are the values of x that make the function evaluate to zero. This seemingly simple task becomes incredibly powerful in cryptography.
+In essence, root finding methods aim to solve the equation $f(x) = 0$, where $f(x)$ is any function. They essentially seek the "roots" of the function, which are the values of $x$ that make the function evaluate to zero. This seemingly simple task becomes incredibly powerful in cryptography.
 
 In our algorithm, we leverage this power by strategically designing the function $f(x)$ to incorporate the encryption key as an unknown variable. Through carefully chosen root finding methods, we iteratively approach the function's roots, and in the decryption process, utilize these roots to recover the original data. The elegance of this approach lies in its inherent security: without knowledge of both the root finding method and how the key is embedded within the function, an attacker would face a near-impossible task of finding the correct roots, keeping your data safe.
 
@@ -36,6 +36,8 @@ And finally, we will be using root finding methods to solve the polynomial equat
 
 The Bisection Method is a straightforward and reliable numerical method used for solving equations in mathematics, particularly in the field of engineering. It solves equations by repeatedly bisecting an interval and then selecting a subinterval in which a root must lie for further processing.
 
+## Bisection Method Advantages
+
 There are several key advantages to the bisection method:
 
 - Guaranteed convergence. The bracketing approach is known as the bisection method, and it is always convergent.
@@ -50,7 +52,9 @@ There are several key advantages to the bisection method:
 
 - In the case of several roots, the bisection procedure is quick.
 
-But there are also some limitations to the bisection method:
+## Bisection Method Disadvantages
+
+There are also some limitations to the bisection method:
 
 - Although the Bisection method's convergence is guaranteed, it is often slow.
 
@@ -70,6 +74,8 @@ But there are also some limitations to the bisection method:
 
 In mathematics, the regula falsi, method of false position, or false position method is a very old method for solving an equation with one unknown; this method, in modified form, is still in use. In simple terms, the method is the trial and error technique of using test ("false") values for the variable and then adjusting the test value according to the outcome. This is sometimes also referred to as "guess and check". Versions of the method predate the advent of algebra and the use of equations.
 
+## False Position Method Advantages
+
 There are several key advantages to the false position method:
 
 - Convergence is guarenteed: this method is bracketing method and it is always convergent.
@@ -78,7 +84,9 @@ There are several key advantages to the false position method:
 
 - Does not require derivative: this method does not require derivative calculation.
 
-But there are also some limitations to the false position method:
+## False Position Method Disadvantages
+
+There are also some limitations to the false position method:
 
 - Slow Rate of Convergence: Although convergence of Regula Falsi method is guaranteed, it is generally slow.
 
@@ -122,48 +130,48 @@ We have also used the same tolerance for each method which is $10^{-14}$
 
 These are the equations that we have used with each method:
 
-## Our Equations
+## Equations That Serve as Test Cases
 
 In these equations we have tried to use different types of functions and intervals to test our methods.
 
-Table: Our Equations
+Table: Test Cases Equations
 
-|  No   | Equation                   | Equation Code                       | Interval       |
-| :---: | :------------------------- | :---------------------------------- | :------------- |
-| $P1$  | $f(x) = x^{3}+4x^{2}-10=0$ | `x**3 + 4*x**2 - 10`                | `[0, 4]`       |
-| $P2$  | $f(x)=x^2-4$               | `x**2 - 4`                          | `[0, 4]`       |
-| $P3$  | $f(x)=e^x-2$               | `math.exp(x) - 2`                   | `[0, 2]`       |
-| $P4$  | $f(x)=\sin(x)$             | `math.sin(x)`                       | `[2, 6]`       |
-| $P5$  | $f(x)=x^3-6x^2+11x-6$      | `x**3 - 6*x**2 + 11*x - 6`          | `[1, 2.5]`     |
-| $P6$  | $f(x)=x^2+3x+2$            | `x**2 + 3*x + 2`                    | `[-2.5, -1.5]` |
-| $P7$  | $f(x)=\cos(x)-x$           | `math.cos(x) - x`                   | `[0, 1]`       |
-| $P8$  | $f(x)=2^x-8$               | `2**x - 8`                          | `[2,4]`        |
-| $P9$  | $f(x)=\tan(x)$             | `math.tan(x)`                       | `[-1, 1]`      |
-| $P10$ | $f(x)=x^4-8x^3+18x^2-9x+1$ | `x**4 - 8*x**3 + 18*x**2 - 9*x + 1` | `[2, 4]`       |
+|  No   | Equation                   |  Interval       |
+| :---: | :------------------------- |  :------------- |
+| $P1$  | $f(x) = x^{3}+4x^{2}-10=0$ |  $[0, 4]$       |
+| $P2$  | $f(x)=x^2-4$               |  $[0, 4]$       |
+| $P3$  | $f(x)=e^x-2$               |  $[0, 2]$       |
+| $P4$  | $f(x)=\sin(x)$             |  $[2, 6]$       |
+| $P5$  | $f(x)=x^3-6x^2+11x-6$      |  $[1, 2.5]$     |
+| $P6$  | $f(x)=x^2+3x+2$            |  $[-2.5, -1.5]$ |
+| $P7$  | $f(x)=\cos(x)-x$           |  $[0, 1]$       |
+| $P8$  | $f(x)=2^x-8$               |  $[2,4]$        |
+| $P9$  | $f(x)=\tan(x)$             |  $[-1, 1]$      |
+| $P10$ | $f(x)=x^4-8x^3+18x^2-9x+1$ |  $[2, 4]$       |
 
-## Equations From Paper
+## Extra Equations From Paper
 
 We got these equations from [this paper](https://www.researchgate.net/publication/360883886_Novel_hybrid_algorithms_for_root_determining_using_advantages_of_open_methods_and_bracketing_methods) and we have used the same intervals too.
 
 Table: Equations From Paper
 
-|  No   | Equation                 | Equation Code                    | Interval  | Reference       |
-| :---: | :----------------------- | :------------------------------- | :-------- | :-------------- |
-| $P11$ | $f(x)=x^2-3$             | `x**2 - 3`                       | `[1,2]`   | Harder [18]     |
-| $P12$ | $f(x)=x^2-5$             | `x**2 - 5`                       | `[2,7]`   | Srivastava[9]   |
-| $P13$ | $f(x)=x^2-10$            | `x**2 - 10`                      | `[3,4]`   | Harder [18]     |
-| $P14$ | $f(x)=x^2-x-2$           | `x**2 - x - 2`                   | `[1,4]`   | Moazzam [10]    |
-| $P15$ | $f(x)=x^2+2x-7$          | `x**2 + 2*x - 7`                 | `[1,3]`   | Nayak[11]       |
-| $P16$ | $f(x)=x^3-2$             | `x**3 - 2`                       | `[0,2]`   | Harder [18]     |
-| $P17$ | $f(x)=xe^x-7$            | `x * math.exp(x) - 7`            | `[0,2]`   | Callhoun [19]   |
-| $P18$ | $f(x)=x-\cos(x)$         | `x - math.cos(x)`                | `[0,1]`   | Ehiwario [6]    |
-| $P19$ | $f(x)=x\sin(x)-1$        | `x * math.sin(x) - 1`            | `[0,2]`   | Mathews [20]    |
-| $P20$ | $f(x)=x\cos(x)+1$        | `x * math.cos(x) + 1`            | `[-2,4]`  | Esfandiari [21] |
-| $P21$ | $f(x)=x^{10}-1$          | `x**10 - 1`                      | `[0,1.3]` | Chapra [17]     |
-| $P22$ | $f(x)=x^2+e^{x/2}-5$     | `x**2 + (2.71828**(x/2)) - 5`    | `[1,2]`   | Esfandiari [21] |
-| $P23$ | $f(x)=\sin(x)\sinh(x)+1$ | `math.sin(x) * math.sinh(x) + 1` | `[3,4]`   | Esfandiari [21] |
-| $P24$ | $f(x)=e^x-3x-2$          | `(2.71828**x) - 3*x - 2`         | `[2,3]`   | Hoffman [22]    |
-| $P25$ | $f(x)=\sin(x)-x^2$       | `math.sin(x) - x**2`             | `[0.5,1]` | Chapra[17]      |
+|  No   | Equation                 | Interval  | Reference       |
+| :---: | :----------------------- | :-------- | :-------------- |
+| $P11$ | $f(x)=x^2-3$             | $[1,2]$   | Harder [18]     |
+| $P12$ | $f(x)=x^2-5$             | $[2,7]$   | Srivastava[9]   |
+| $P13$ | $f(x)=x^2-10$            | $[3,4]$   | Harder [18]     |
+| $P14$ | $f(x)=x^2-x-2$           | $[1,4]$   | Moazzam [10]    |
+| $P15$ | $f(x)=x^2+2x-7$          | $[1,3]$   | Nayak[11]       |
+| $P16$ | $f(x)=x^3-2$             | $[0,2]$   | Harder [18]     |
+| $P17$ | $f(x)=xe^x-7$            | $[0,2]$   | Callhoun [19]   |
+| $P18$ | $f(x)=x-\cos(x)$         | $[0,1]$   | Ehiwario [6]    |
+| $P19$ | $f(x)=x\sin(x)-1$        | $[0,2]$   | Mathews [20]    |
+| $P20$ | $f(x)=x\cos(x)+1$        | $[-2,4]$  | Esfandiari [21] |
+| $P21$ | $f(x)=x^{10}-1$          | $[0,1.3]$ | Chapra [17]     |
+| $P22$ | $f(x)=x^2+e^{x/2}-5$     | $[1,2]$   | Esfandiari [21] |
+| $P23$ | $f(x)=\sin(x)\sinh(x)+1$ | $[3,4]$   | Esfandiari [21] |
+| $P24$ | $f(x)=e^x-3x-2$          | $[2,3]$   | Hoffman [22]    |
+| $P25$ | $f(x)=\sin(x)-x^2$       | $[0.5,1]$ | Chapra[17]      |
 
 # Root Finding Algorithms Performance Results
 
@@ -332,7 +340,7 @@ As we see from the table above the hybrid method tend to be faster and take much
 
 Our conclusions based on the tables and the plots are:
 
-> *Side Note: The equation $f(x)=x^3-6x^2+11x-6$ in P5 has two roots. In the false position and hybrid methods, the equation has a root at 1. On the other hand,  the bisection method identifies another root at approximately 2.0000000000000018 within the interval $[1, 2.5]$.*
+<!-- > *Side Note: The equation $f(x)=x^3-6x^2+11x-6$ in P5 has two roots. In the false position and hybrid methods, the equation has a root at 1. On the other hand,  the bisection method identifies another root at approximately 2.0000000000000018 within the interval $[1, 2.5]$.* -->
 
 ### Iterations
 
@@ -455,6 +463,103 @@ The total time for both algorithms was also measured and compared. The results a
 And when we sum the total time for all the 1000 messages we get the following results:
 
 ![Total Time Comparison](./images/total_time.svg){width=350px}
+
+\pagebreak
+
+# Design & Analysis
+
+## Functional & Non-Functional Requirements Table
+
+Table: Functional & NonFunctional Requirements
+
+| Name           | Functional | NonFunctional | Description                                           | Priority | Actor    |
+| ------------------ | :----------------: | :-------------------: | --------------------------------------------------------- | ------------ | ---------------- |
+| Registration   |  $\checkmark$  |                   | Functionality to create account.                          | High         | User & Admin |
+| Login          |  $\checkmark$  |                   | Functionality to get access.                              | High         | User & Admin |
+| Logout         |  $\checkmark$  |                   | Functionality to delete session.                          | High         | User & Admin |
+| Add Chat       |  $\checkmark$  |                   | Functionality for user to chat with other.                | Medium       | User         |
+| Remove Chat    |  $\checkmark$  |                   | Functionality for user to remove chat.                    | Medium       | User         |
+| Find Chat      |  $\checkmark$  |                   | Functionality for user to search for a chat.              | High         | User         |
+| Block Account  |  $\checkmark$  |                   | Functionality for user to block user account.             | Medium       | User         |
+| Send Message   |  $\checkmark$  |                   | Functionality that send message.                          | High         | User         |
+| Delete Message |  $\checkmark$  |                   | Functionality to delete message.                          | Medium       | User & Admin |
+| Read Message   |  $\checkmark$  |                   | Functionality for user to read message                    | High         | User         |
+| Privacy        |                |   $\checkmark$    | Users privacy.                                            | High         | Admin        |
+| Robustness     |                |   $\checkmark$    | to make able to deal with errors.                         | High         | Admin        |
+| Performance    |                |   $\checkmark$    | Application performance must be better.                   | High         | Admin        |
+| Usability      |                |   $\checkmark$    | To make able to use even for newbie.                      | High         | Admin        |
+| Reliability    |                |   $\checkmark$    | To be trustworthy to users.                               | High         | Admin        |
+| Supportability |                |   $\checkmark$    | To be capable of being supportive.                        | High         | Admin        |
+| Portability    |                |   $\checkmark$    | Application must be able to run in many different system. | High         | Admin        |
+
+## Use Case Diagram
+
+```{.plantuml caption="Use Case Diagram" width=43%}
+@startuml
+left to right direction
+actor User
+actor Admin
+
+rectangle "Messaging Website" {
+    User --> (Sign Up)
+    User --> (Login)
+    User --> (Send Text Message)
+    User --> (Send Images)
+    User --> (Search For Messages)
+    User --> (Delete Messages)
+    User --> (Read Message in Group Chat)
+    User --> (Change Profile Picture)
+    User --> (Update Profile Information)
+    User --> (Edit Messages)
+    User --> (Logout)
+
+    Admin --> (Sign Up)
+    Admin --> (Login)
+    Admin --> (Ban/Unban Users)
+    Admin --> (Delete Users)
+    Admin --> (Delete Messages)
+    Admin --> (Update Application Content)
+    Admin --> (View System Statistics in a Dashboard)
+    Admin --> (Logout)
+}
+@enduml
+```
+
+<!-- ## Activity Diagram -->
+
+## Class Diagram
+
+![Class Diagram](./files/class-state/class_diagram.svg)
+
+## Sequence Diagram
+
+![Registeration Sequence Diagram](./files/sequence/sequence%20message%20Register.svg)
+
+![Login Sequence Diagram](./files/sequence/sequence%20login.svg)
+
+![New Chat Sequence Diagram](./files/sequence/sequence%20message%20new%20chat.svg)
+
+![Send Message Sequence Diagram](./files/sequence/sequence%20message%20Send%20message.svg)
+
+![Remove Message Sequence Diagram](./files/sequence/sequence%20message%20Remove%20message.svg)
+
+![Logout Sequence Diagram](./files/sequence/sequence%20message%20logout%20message.svg)
+
+## State Diagram
+
+![State Diagram](files/class-state/state_diagram.svg)
+
+## Context Diagram
+
+![Context Diagram](files/context-dfd/messaging-sys-context-diagram-1.svg)
+
+## Data Flow Diagram
+
+![Data Flow Diagram](files/context-dfd/messaging-sys-dfd-1.svg)
+
+## Entity Relationship Diagram
+
+![Entity Relationship Diagram](files/erd-usecase/finish_erd.svg)
 
 \pagebreak
 
