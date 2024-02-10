@@ -1,5 +1,5 @@
 ---
-title: \begin{title}\centering\vspace*{1cm}\rule{\textwidth}{0.05cm}\linebreak\vspace{0.5cm}{\huge\bfseries High-Speed Encryption Algorithm with Polynomial Roots \par}\vspace{0.1cm}\hrule\end{title}
+title: \begin{title}\centering\vspace*{1cm}\rule{\textwidth}{0.05cm}\linebreak\vspace{0.5cm}{\huge\bfseries Messaging Web Application Using High-Speed Encryption Algorithm with Polynomial Roots \par}\vspace{0.1cm}\hrule\end{title}
 date: February 12, 2024
 abstract: Encryption algorithms play a critical role in protecting sensitive data in the digital age. However, traditional symmetric encryption methods like AES suffer from high computational complexity that hinders performance. Our project proposes a novel polynomial interpolation based encryption algorithm that aims to accelerate encryption and decryption speeds. The algorithm leverages polynomials generated from secret keys. It then uses an efficient hybrid root finding technique called HybridBF to encode messages into ciphertext roots and decode them back to plaintext. Extensive testing on 1000 sample plaintext-key pairs shows the new algorithm is significantly faster than AES for both encryption and decryption. The hybrid root finder combines aspects of bisection and false position methods, demonstrating faster convergence than either individual technique. By exploiting polynomials and highly optimized root finding, this project delivers an encryption algorithm with superior efficiency while maintaining security. The improved performance could enable broader adoption of strong encryption across communication networks and data storage systems. \pagebreak
 ---
@@ -11,6 +11,16 @@ abstract: Encryption algorithms play a critical role in protecting sensitive dat
 The ever-evolving landscape of cyber threats demands constant innovation in the field of cryptography. Existing encryption algorithms, while providing valuable protection, are often riddled with limitations. Computational complexity can hinder performance, and the rise of quantum computing casts a shadow on the future of established methods. This project presents a groundbreaking departure from tradition, introducing a novel encryption algorithm that leverages the potent combination of polynomials and root finding methods.
 
 This paper delves into the intricate details of the algorithm, meticulously explaining each step of the encryption and decryption processes. We provide a comprehensive analysis of its performance, Comparing it with established methods such as AES, showcasing its significant speed advantage.
+
+\pagebreak
+
+# Problem & Project Aim
+
+Encryption, regardless of its application, inevitably requires some processing time. This could be for file encryption on a disk or network encryption via a VPN. The extent of this slowdown is contingent on the encryption algorithms employed and, crucially, the proficiency of the programmer who crafted the encryption and decryption code.
+
+Algorithms with high computational complexity can become performance bottlenecks, particularly for systems necessitating real-time data encryption and decryption. This can adversely affect real-time applications such as video conferencing, secure voice calls, or high-speed data transfers. The processing delays induced by encryption can result in lag, disruptions, and a bad user experience.
+
+The aim of this project is to develop a high-speed encryption algorithm that can be used for real-time applications. The algorithm should be able to encrypt and decrypt data at a much faster rate than traditional encryption algorithms, then it will be used to encrypt and decrypt data in real-time messaging web application.
 
 \pagebreak
 
@@ -36,6 +46,20 @@ And finally, we will be using root finding methods to solve the polynomial equat
 
 The Bisection Method is a straightforward and reliable numerical method used for solving equations in mathematics, particularly in the field of engineering. It solves equations by repeatedly bisecting an interval and then selecting a subinterval in which a root must lie for further processing.
 
+## How Does the Bisection Method Work?
+
+If we have a function $f(x)$ that is continuous on the interval $[a, b]$ and $f(a) \cdot f(b) < 0$ (the signals of $f(x)$ at the ends $a$ and $b$ are different), then the function has at least one root in the interval $[a, b]$. The Bisection Method works by repeatedly bisecting the interval and then selecting a subinterval in which a root must lie for further processing. The value of $x$ at the midpoint of the interval is equal to $\frac{a+b}{2}$, if $f(\frac{a+b}{2}) = 0$, then $\frac{a+b}{2}$ is the root of the equation. If $f(a) \cdot f(\frac{a+b}{2}) < 0$, then the root lies in the interval $[a, \frac{a+b}{2}]$, and if $f(\frac{a+b}{2}) \cdot f(b) < 0$, then the root lies in the interval $[\frac{a+b}{2}, b]$. This process is repeated until we reach the desired accuracy.
+
+The number of iterations required to reach the desired accuracy can be calculated using the formula:
+
+$$n = \lceil\log_2(\frac{b-a}{\epsilon})\rceil$$
+
+Where $n$ is the number of iterations, $a$ and $b$ are the lower and upper bounds of the interval, and $\epsilon$ is the desired accuracy.
+
+The accuracy of the Bisection Method can be calculated using the formula:
+
+$$\epsilon = \frac{b-a}{2^{n}}$$
+
 ## Bisection Method Advantages
 
 There are several key advantages to the bisection method:
@@ -45,8 +69,6 @@ There are several key advantages to the bisection method:
 - Errors can be managed. Increasing the number of iterations in the bisection method always results in a more accurate root.
 
 - Doesn't demand complicated calculations. There are no complicated calculations required when using the bisection method. To use the bisection method, we only need to take the average of two values.
-
-- Error bound is guaranteed. There is a guaranteed error bound in this technique, and it reduces with each repetition. Each cycle reduces the error bound by 12 per cent.
 
 - The bisection method is simple and straightforward to programme on a computer.
 
@@ -73,6 +95,16 @@ There are also some limitations to the bisection method:
 # False Position Method
 
 In mathematics, the regula falsi, method of false position, or false position method is a very old method for solving an equation with one unknown; this method, in modified form, is still in use. In simple terms, the method is the trial and error technique of using test ("false") values for the variable and then adjusting the test value according to the outcome. This is sometimes also referred to as "guess and check". Versions of the method predate the advent of algebra and the use of equations.
+
+## How Does the False Position Method Work?
+
+If we have a function $f(x)$ that is continuous on the interval $[a, b]$ and $f(a) \cdot f(b) < 0$ (the signals of $f(x)$ at the ends $a$ and $b$ are different), then the function has at least one root in the interval $[a, b]$.
+
+The interval $[a, b]$ have different signs. The false position method uses two endpoints of the interval $[a, b]$ with initial values $\left(r_{0}=a, r_{1}=b\right)$. The connecting line between the two points $\left(r_{0}, f\left(r_{0}\right)\right)$ and $\left(r_{1}, f\left(r_{1}\right)\right)$ intersects the $x$-axis at the next estimate, $r_{2}$. Now, we can determine the successive estimates, $r_{n}$ from the following relationship:
+
+$$
+r_{n}=r_{n-1}-\frac{f\left(r_{n-1}\right)\left(r_{n-1}-r_{n-2}\right)}{f\left(r_{n-1}\right)-f\left(r_{n-2}\right)}
+$$
 
 ## False Position Method Advantages
 
@@ -132,7 +164,7 @@ These are the equations that we have used with each method:
 
 ## Equations That Serve as Test Cases
 
-In these equations we have tried to use different types of functions and intervals to test our methods.
+In these equations we have tried to use different types of functions like polynomial, exponential, trigonometric, and logarithmic functions to ensure that the algorithm works with different types of functions. We have also used different intervals with each algorithm depending on where the roots of the equations are.
 
 Table: Test Cases Equations
 
@@ -145,7 +177,7 @@ Table: Test Cases Equations
 | $P5$  | $f(x)=x^3-6x^2+11x-6$      |  $[1, 2.5]$     |
 | $P6$  | $f(x)=x^2+3x+2$            |  $[-2.5, -1.5]$ |
 | $P7$  | $f(x)=\cos(x)-x$           |  $[0, 1]$       |
-| $P8$  | $f(x)=2^x-8$               |  $[2,4]$        |
+| $P8$  | $f(x)=2^x-8$               |  $[2, 4]$        |
 | $P9$  | $f(x)=\tan(x)$             |  $[-1, 1]$      |
 | $P10$ | $f(x)=x^4-8x^3+18x^2-9x+1$ |  $[2, 4]$       |
 
@@ -395,7 +427,7 @@ The algorithm encrypts plaintext message using a polynomial and root finding met
    2. Divide the interval $[y, -y]$ into $s$ equal sections.
    3. Generate points from the two intervals that will be used to generate the polynomial.
    4. Use the random numbers we got $r$ to add some noise to the points.
-   5. Apply lagrange interpolation to the points to generate the polynomial.
+   5. Apply Newton Forward Difference interpolation to the points to generate the polynomial Since the points are equally spaced.
 4. Now we have the polynomial and the plaintext integer representation so we will subtract the plaintext integer from the polynomial representation
 5. We get the root of the polynomial which will be the ciphertext using HybridBF algorithm which is a hybrid algorithm between the bisection method and false position method and it will be discussed later.
 
@@ -405,7 +437,7 @@ A[Start] --> B[Take plaintext message]
 B --> C[Convert each 4 characters to an integer]
 C --> D[Take the key from the user]
 D --> E[Generate points using the key]
-E --> F[Apply lagrange interpolation to the points]
+E --> F[Apply Newton Forward Difference interpolation to the points]
 F --> G[Subtract plaintext integer from polynomial]
 G --> H[Find root of polynomial]
 H --> I[End: Root is the Ciphertext]
@@ -448,7 +480,7 @@ And when we sum the encoding time for all the 1000 messages we get the following
 
 The algorithm have also showed a significant improvement in the decoding time compared to AES. The results are shown in this figure:
 
-![Decoding Time Comparison](./images/total-dencode-time-comparison.svg)
+![Decoding Time Comparison](images/total-decode-time-comparison.svg)
 
 And when we sum the decoding time for all the 1000 messages we get the following results:
 
@@ -472,6 +504,8 @@ And when we sum the total time for all the 1000 messages we get the following re
 
 Table: Functional & NonFunctional Requirements
 
+<!-- | ------------------ | :----------------: | :-------------------: | --------------------------------------------------------- | ------------ | ---------------- | -->
+
 | Name           | Functional | NonFunctional | Description                                           | Priority | Actor    |
 | ------------------ | :----------------: | :-------------------: | --------------------------------------------------------- | ------------ | ---------------- |
 | Registration   |  $\checkmark$  |                   | Functionality to create account.                          | High         | User & Admin |
@@ -494,42 +528,27 @@ Table: Functional & NonFunctional Requirements
 
 ## Use Case Diagram
 
-```{.plantuml caption="Use Case Diagram" width=43%}
-@startuml
-left to right direction
-actor User
-actor Admin
+![Use Case Diagram](./files/erd-usecase/usecase.svg){width=260px}
 
-rectangle "Messaging Website" {
-    User --> (Sign Up)
-    User --> (Login)
-    User --> (Send Text Message)
-    User --> (Send Images)
-    User --> (Search For Messages)
-    User --> (Delete Messages)
-    User --> (Read Message in Group Chat)
-    User --> (Change Profile Picture)
-    User --> (Update Profile Information)
-    User --> (Edit Messages)
-    User --> (Logout)
+## Activity Diagram
 
-    Admin --> (Sign Up)
-    Admin --> (Login)
-    Admin --> (Ban/Unban Users)
-    Admin --> (Delete Users)
-    Admin --> (Delete Messages)
-    Admin --> (Update Application Content)
-    Admin --> (View System Statistics in a Dashboard)
-    Admin --> (Logout)
-}
-@enduml
-```
+![Sign up Activity Diagram](files/activity/sign_up.drawio.svg)
 
-<!-- ## Activity Diagram -->
+![Sign in Activity Diagram](files/activity/sign_in.drawio.svg)
+
+![Edit Profile Activity Diagram](files/activity/edit_profile.drawio.svg)
+
+![Search Message Activity Diagram](files/activity/Message_Search.drawio.svg)
+
+![Search For Conversation Activity Diagram](files/activity/Converisation_Search.drawio.svg)
+
+![Search/Receive Data Activity Diagram](files/activity/send_reciev_data.drawio.svg)
+
+![Ban Unban Users Activity Diagram](files/activity/ban_unban_user.drawio.svg)
 
 ## Class Diagram
 
-![Class Diagram](./files/class-state/class_diagram.svg)
+![Class Diagram](files/class-state/class_diag.drawio.png)
 
 ## Sequence Diagram
 
@@ -547,7 +566,7 @@ rectangle "Messaging Website" {
 
 ## State Diagram
 
-![State Diagram](files/class-state/state_diagram.svg)
+![State Diagram](files/class-state/final_state.drawio.svg)
 
 ## Context Diagram
 
@@ -579,6 +598,26 @@ After the successful implementation of the algorithm, we are planning to work on
 
 # References
 
+\doublespacing
+
 1. jagpreet kaur, Dr. Ramkumar K.R.. A Cryptographic Algorithm using Polynomial Interpolations for Mitigating Key-Size Based Attacks, 14 September 2022, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-2050151/v1]
 
 2. Badr, El-Sayed & Attiya, Hala & El Ghamry, Abdallah. (2022). Novel hybrid algorithms for root determining using advantages of open methods and bracketing methods. Alexandria Engineering Journal. 61. 11579-11588. 10.1016/j.aej.2022.05.007.
+
+3. Harder, D.W. Numerical Analysis for Engineering. Available online: <https://ece.uwaterloo.ca/~dwharder/nm/> (accessed on 11 June 2019).
+
+4. Srivastava, R.B.; Srivastava, S. Comparison of numerical rate of convergence of bisection, Newton and secant methods. J. Chem. Biol. Phys. Sci. 2011, 2, 472–479.
+
+5. Moazzam, G.; Chakraborty, A.; Bhuiyan, A. A robust method for solving transcendental equations. Int. J. Comput. Sci. Issues 2012, 9, 413–419.
+
+6. Nayak, T.; Dash, T. Solution to quadratic equation using genetic algorithm. In Proceedings of the National Conference on AIRES-2012, Vishakhapatnam, India, 29–30 June 2012.
+
+7. Calhoun, D. Available online: <https://www.boisestate.edu/math/>.
+
+8. Ehiwario, J.C.; Aghamie, S.O. Comparative Study of Bisection, Newton-Raphson and Secant Methods of Root-Finding Problems. IOSR J. Eng. 2014, 4, 1–7
+
+9. Mathews, J.H.; Fink, K.D. Numerical Methods Using Matlab, 4th ed.; Prentice-Hall Inc.: Upper Saddle River, NJ, USA, 2004; ISBN 0-13-065248-2.
+
+10. Esfandiari, R.S. Numerical Methods for Engineers and Scientists Using MATLAB; CRC Press: Boca Raton, FL, USA, 2013.
+
+11. Chapra, S.C.; Canale, R.P. Numerical Methods for Engineers, 7th ed.; McGraw-Hill: Boston, MA, USA, 2015.

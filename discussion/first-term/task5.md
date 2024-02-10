@@ -100,7 +100,7 @@ And when we sum the encoding time for all the 1000 messages we get the following
 
 The algorithm have also showed a significant improvement in the decoding time compared to AES. The results are shown in this figure:
 
-![Decoding Time Comparison](./images/total-dencode-time-comparison.svg)
+![Decoding Time Comparison](images/total-decode-time-comparison.svg)
 
 And when we sum the decoding time for all the 1000 messages we get the following results:
 
