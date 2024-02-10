@@ -28,8 +28,8 @@ author:
 # date: \today
 
 papersize: a4
-toc: true
 # toc-depth:
+toc: true
 lof: true
 lot: true
 
@@ -126,5 +126,8 @@ header-includes:
 
   # - \usepackage{fontspec}
   # - \setmainfont{Times New Roman}
+
+  # For line spacing
+  - \usepackage{setspace}
 ---
 
