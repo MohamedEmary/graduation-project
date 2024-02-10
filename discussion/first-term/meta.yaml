@@ -31,6 +31,7 @@ papersize: a4
 toc: true
 # toc-depth:
 lof: true
+lot: true
 
 geometry:
   - top=20mm

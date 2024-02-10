@@ -1,15 +1,60 @@
 ---
-title: \begin{title}\centering\vspace*{1cm}\rule{\textwidth}{0.05cm}\linebreak\vspace{0.5cm}{\huge\bfseries A Novel, High-Speed Encryption with Polynomial Roots \par}\vspace{0.1cm}\hrule\end{title}
+title: \begin{title}\centering\vspace*{1cm}\rule{\textwidth}{0.05cm}\linebreak\vspace{0.5cm}{\huge\bfseries High-Speed Encryption Algorithm with Polynomial Roots \par}\vspace{0.1cm}\hrule\end{title}
 date: February 12, 2024
-
-abstract: Efficient and accurate root-finding algorithms are critical in numerical analysis across science and engineering. Here we compare three methods - bisection, false position, and a hybrid technique - for solving nonlinear equations. The hybrid approach combines aspects of false position (an open method) and bisection (a bracketing method), leveraging the speed of the former and reliability of the latter. Extensive testing on 25 diverse sample equations shows the hybrid method requires significantly fewer iterations and less computation time to identify roots with similar or better accuracy versus the other two techniques. It reduces iterations and CPU time, while achieving function values closer to the desired zero. By integrating strengths of open and bracketing root-finders, the new hybrid method delivers faster, more efficient, and numerially stable performance in locating roots for a wide variety of equation types.\pagebreak
+abstract: Encryption algorithms play a critical role in protecting sensitive data in the digital age. However, traditional symmetric encryption methods like AES suffer from high computational complexity that hinders performance. Our project proposes a novel polynomial interpolation based encryption algorithm that aims to accelerate encryption and decryption speeds. The algorithm leverages polynomials generated from secret keys. It then uses an efficient hybrid root finding technique called HybridBF to encode messages into ciphertext roots and decode them back to plaintext. Extensive testing on 1000 sample plaintext-key pairs shows the new algorithm is significantly faster than AES for both encryption and decryption. The hybrid root finder combines aspects of bisection and false position methods, demonstrating faster convergence than either individual technique. By exploiting polynomials and highly optimized root finding, this project delivers an encryption algorithm with superior efficiency while maintaining security. The improved performance could enable broader adoption of strong encryption across communication networks and data storage systems. \pagebreak
 ---
 
 \pagebreak
 
-# Equations
+# Introduction
 
-\lettrine{W}e have used the same 25 equations with each method and run each method (Bisection, False Position, and Hybrid) 500 times for each problem and then we have calculated the average time. We have also calculated the number of iterations each method have taken for each problem.
+The ever-evolving landscape of cyber threats demands constant innovation in the field of cryptography. Existing encryption algorithms, while providing valuable protection, are often riddled with limitations. Computational complexity can hinder performance, and the rise of quantum computing casts a shadow on the future of established methods. This project presents a groundbreaking departure from tradition, introducing a novel encryption algorithm that leverages the potent combination of polynomials and root finding methods.
+
+This paper delves into the intricate details of the algorithm, meticulously explaining each step of the encryption and decryption processes. We provide a comprehensive analysis of its performance, Comparing it with established methods such as AES, showcasing its significant speed advantage.
+
+\pagebreak
+
+# Root Finding Methods
+
+At the heart of our innovative encryption algorithm lies a powerful mathematical tool: root finding methods. These methods, while seemingly abstract, play a crucial role in ensuring the security and efficiency of our solution. But before we delve into their specific application, let's unpack what they are and why they hold such significance.
+
+In essence, root finding methods aim to solve the equation $f(x) = 0$, where $f(x)$ is any function. They essentially seek the "roots" of the function, which are the values of x that make the function evaluate to zero. This seemingly simple task becomes incredibly powerful in cryptography.
+
+In our algorithm, we leverage this power by strategically designing the function $f(x)$ to incorporate the encryption key as an unknown variable. Through carefully chosen root finding methods, we iteratively approach the function's roots, and in the decryption process, utilize these roots to recover the original data. The elegance of this approach lies in its inherent security: without knowledge of both the root finding method and how the key is embedded within the function, an attacker would face a near-impossible task of finding the correct roots, keeping your data safe.
+
+However, the importance of root finding methods extends far beyond encryption. They have diverse applications across various fields, including:
+
+- Numerical Analysis: Solving differential equations, optimization problems, and more.
+- Engineering Design: Calculating crucial parameters in fields like fluid dynamics and structural analysis.
+- Computer Graphics: Generating realistic images and animations.
+
+\pagebreak
+
+# HybridBF Algorithm
+
+The HybridBF algorithm is a hybrid algorithm between the bisection method and false position method. The algorithm works as follows:
+
+1. Take the polynomial and the interval that contains the root.
+2. In each iteration, the algorithm will apply the bisection method and the false position method and get the root from each method.
+3. The algorithm will choose the root that will give the smallest absolute value of the polynomial.
+4. The algorithm will stop when the absolute value of the polynomial is less than a certain tolerance we define.
+
+```{.mermaid caption="HybridBF Steps Flowchart" width=35%}
+graph TB
+    Start(Start) --> Input[Input: Polynomial, Interval]
+    Input --> Bisection[Apply Bisection Method]
+    Input --> FalsePosition[Apply False Position Method]
+    Bisection --> RootBisection[Root from Bisection]
+    FalsePosition --> RootFalsePosition[Root from False Position]
+    RootBisection --> Compare[Compare Absolute Values]
+    RootFalsePosition --> Compare
+    Compare --> Output[Output: Root with Smallest Absolute Value]
+    Output --> Check{Check: Absolute Value < Tolerance?}
+    Check -- Yes --> End(End)
+    Check -- No --> Input
+```
+
+To test the algorithm we have used the same 25 equations with each method and run each method (Bisection, False Position, and Hybrid) 500 times for each problem and then we have calculated the average time. We have also calculated the number of iterations each method have taken for each problem.
 
 We have also used the same tolerance for each method which is $10^{-14}$
 
@@ -58,7 +103,7 @@ Table: Equations From Paper
 | $P24$ | $f(x)=e^x-3x-2$          | `(2.71828**x) - 3*x - 2`         | `[2,3]`   | Hoffman [22]    |
 | $P25$ | $f(x)=\sin(x)-x^2$       | `math.sin(x) - x**2`             | `[0.5,1]` | Chapra[17]      |
 
-# Results
+# Root Finding Algorithms Performance Results
 
 These are the results we got with each method. We have run each method 500 times on each equation and took the average time to get the highest accuracy possible.
 
@@ -261,7 +306,9 @@ abstract: Encryption algorithms are vital for securing sensitive data. However, 
 \pagebreak
 -->
 
-# Algorithm Steps
+\pagebreak
+
+# Encryption Algorithm Steps
 
 ## Encryption Process
 
@@ -313,30 +360,6 @@ E --> F[Convert the integer to the plaintext message]
 F --> G[End: Plaintext message]
 ```
 
-## HybridBF Algorithm
-
-The HybridBF algorithm is a hybrid algorithm between the bisection method and false position method. The algorithm works as follows:
-
-1. Take the polynomial and the interval that contains the root.
-2. In each iteration, the algorithm will apply the bisection method and the false position method and get the root from each method.
-3. The algorithm will choose the root that will give the smallest absolute value of the polynomial.
-4. The algorithm will stop when the absolute value of the polynomial is less than a certain threshold we define.
-
-```{.mermaid caption="HybridBF Steps Flowchart" width=35%}
-graph TB
-    Start(Start) --> Input[Input: Polynomial, Interval]
-    Input --> Bisection[Apply Bisection Method]
-    Input --> FalsePosition[Apply False Position Method]
-    Bisection --> RootBisection[Root from Bisection]
-    FalsePosition --> RootFalsePosition[Root from False Position]
-    RootBisection --> Compare[Compare Absolute Values]
-    RootFalsePosition --> Compare
-    Compare --> Output[Output: Root with Smallest Absolute Value]
-    Output --> Check{Check: Absolute Value < Threshold?}
-    Check -- Yes --> End(End)
-    Check -- No --> Input
-```
-
 # Results
 
 The algorithm was tested using 1000 different plaintext messages and keys and was compared against AES encryption algorithm which is a symmetric encryption algorithm. The results showed that the algorithm is much faster than AES.
@@ -370,3 +393,7 @@ The total time for both algorithms was also measured and compared. The results a
 And when we sum the total time for all the 1000 messages we get the following results:
 
 ![Total Time Comparison](./images/total_time.svg){width=350px}
+
+\pagebreak
+
+# References

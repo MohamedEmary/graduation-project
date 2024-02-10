@@ -1,0 +1,8 @@
+- $\checkmark$ Use Case
+- $\checkmark$ ERD
+- $\checkmark$ Class Diagram
+- $\checkmark$ Sequence Diagram
+- $\checkmark$ Activity Diagram
+- $\checkmark$ Context Diagram
+- $\checkmark$ DFD Diagram
+- $\checkmark$ State Diagram
