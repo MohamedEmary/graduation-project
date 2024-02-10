@@ -22,13 +22,75 @@ In essence, root finding methods aim to solve the equation $f(x) = 0$, where $f(
 
 In our algorithm, we leverage this power by strategically designing the function $f(x)$ to incorporate the encryption key as an unknown variable. Through carefully chosen root finding methods, we iteratively approach the function's roots, and in the decryption process, utilize these roots to recover the original data. The elegance of this approach lies in its inherent security: without knowledge of both the root finding method and how the key is embedded within the function, an attacker would face a near-impossible task of finding the correct roots, keeping your data safe.
 
-However, the importance of root finding methods extends far beyond encryption. They have diverse applications across various fields, including:
+However, the importance of root finding methods extends far beyond encryption. They have diverse applications across various fields. In numerical analysis, they are used for solving differential equations and optimization problems among other things. In engineering design, they are crucial for calculating parameters in fields like fluid dynamics and structural analysis. In computer graphics, they are essential for generating realistic images and animations.
 
-- Numerical Analysis: Solving differential equations, optimization problems, and more.
-- Engineering Design: Calculating crucial parameters in fields like fluid dynamics and structural analysis.
-- Computer Graphics: Generating realistic images and animations.
+Root finding algorithms also have a significant role in machine learning. They are utilized in optimization methods like gradient descent, which is a common technique for training models. The goal of these methods is to minimize a loss function, thereby improving the model's accuracy.
+
+They also have a vital role in economics and finance. They are used to calculate internal rates of return, solve equilibrium equations in economic models, and find optimal investment strategies.
+
+And finally, we will be using root finding methods to solve the polynomial equations that we will be using in our encryption algorithm.
 
 \pagebreak
+
+# Bisection Method
+
+The Bisection Method is a straightforward and reliable numerical method used for solving equations in mathematics, particularly in the field of engineering. It solves equations by repeatedly bisecting an interval and then selecting a subinterval in which a root must lie for further processing.
+
+There are several key advantages to the bisection method:
+
+- Guaranteed convergence. The bracketing approach is known as the bisection method, and it is always convergent.
+
+- Errors can be managed. Increasing the number of iterations in the bisection method always results in a more accurate root.
+
+- Doesn't demand complicated calculations. There are no complicated calculations required when using the bisection method. To use the bisection method, we only need to take the average of two values.
+
+- Error bound is guaranteed. There is a guaranteed error bound in this technique, and it reduces with each repetition. Each cycle reduces the error bound by 12 per cent.
+
+- The bisection method is simple and straightforward to programme on a computer.
+
+- In the case of several roots, the bisection procedure is quick.
+
+But there are also some limitations to the bisection method:
+
+- Although the Bisection method's convergence is guaranteed, it is often slow.
+
+- Choosing a guess that is close to the root may necessitate numerous iterations to converge.
+
+- Some equations' roots cannot be found. Because there are no bracketing values, like $f(x) = x^2$.
+
+- Its rate of convergence is linear.
+
+- It is incapable of determining complex roots.
+
+- If the guess interval contains discontinuities, it cannot be used.
+
+- It cannot be applied over an interval where the function returns values of the same sign.
+
+# False Position Method
+
+In mathematics, the regula falsi, method of false position, or false position method is a very old method for solving an equation with one unknown; this method, in modified form, is still in use. In simple terms, the method is the trial and error technique of using test ("false") values for the variable and then adjusting the test value according to the outcome. This is sometimes also referred to as "guess and check". Versions of the method predate the advent of algebra and the use of equations.
+
+There are several key advantages to the false position method:
+
+- Convergence is guarenteed: this method is bracketing method and it is always convergent.
+
+- Error can be controlled: increasing number of iteration always yields more accurate root.
+
+- Does not require derivative: this method does not require derivative calculation.
+
+But there are also some limitations to the false position method:
+
+- Slow Rate of Convergence: Although convergence of Regula Falsi method is guaranteed, it is generally slow.
+
+- Can not find root of some equations. For example: $f(x) = x^2$ as there are no bracketing values.
+
+- It has linear rate of convergence.
+
+- It fails to determine complex roots.
+
+- It can not be applied if there are discontinuities in the guess interval.
+
+- It can not be applied over an interval where the function takes values of the same sign.
 
 # HybridBF Algorithm
 
@@ -396,4 +458,22 @@ And when we sum the total time for all the 1000 messages we get the following re
 
 \pagebreak
 
+# Future Work
+
+After the successful implementation of the algorithm, we are planning to work on:
+
+- Create a messaging application that uses the algorithm to secure the messages. The application will be a web application that will allow users to send and receive messages securely.
+
+- The messaging application will feature end-to-end encryption, ensuring that only the intended recipient can read the messages. This is achieved by implementing our unique high-speed encryption algorithm.
+
+- Users will be able to create an account, start conversations, and send send messages. Each message sent through the application is encrypted before it leaves the sender's device and can only be decrypted by the intended recipient. This ensures the privacy and security of the communication, even if the data is intercepted during transmission.
+
+- The application will also include features such as group messaging, file sharing, and message notifications. The user interface will be intuitive and user-friendly, making it easy for users to navigate and use the application.
+
+\pagebreak
+
 # References
+
+1. jagpreet kaur, Dr. Ramkumar K.R.. A Cryptographic Algorithm using Polynomial Interpolations for Mitigating Key-Size Based Attacks, 14 September 2022, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-2050151/v1]
+
+2. Badr, El-Sayed & Attiya, Hala & El Ghamry, Abdallah. (2022). Novel hybrid algorithms for root determining using advantages of open methods and bracketing methods. Alexandria Engineering Journal. 61. 11579-11588. 10.1016/j.aej.2022.05.007.
