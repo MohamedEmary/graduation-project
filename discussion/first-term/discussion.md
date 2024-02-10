@@ -566,6 +566,8 @@ Table: Functional & NonFunctional Requirements
 
 ## State Diagram
 
+![Admin & User State Diagrams](files/class-state/User-admin.drawio.svg)
+
 ![State Diagram](files/class-state/final_state.drawio.svg)
 
 ## Context Diagram

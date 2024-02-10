@@ -41,13 +41,15 @@ Under supervision of **Dr. Sayed Badr**
 <!-- Order of list items -->
 
 1. Problem
-2. Project Aim
-3. Current Solutions
-4. How Does The Algorithm Works
-5. Current Progress
-6. Future Work
+2. Current Solutions in the Market
+3. Root Finding Algorithms
+4. How Does The Encryption Algorithm Works
+5. Results
+6. Methodology
+7. Current Progress
+8. Future Work
 
-<!-- 4. Methodology -->
+<!-- 6. Project Aim -->
 
 Let's get started!
 
@@ -217,6 +219,20 @@ The algorithm was tested using $1000$ different plaintext messages and keys and 
 ## Decode Time Sum Over 1000 Messages
 
 ![Decode Time Sum](images/total_decode_time.svg)
+
+---
+
+## Total Time Over 1000 Messages
+
+We mean by total time the sum of the encode time and the decode time for each message.
+
+![Total Time](images/total-time-comparison.svg)
+
+---
+
+## Total Time Sum Over 1000 Messages
+
+![Total Time Sum](images/total_time.svg)
 
 ---
 
