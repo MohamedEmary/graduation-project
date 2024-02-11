@@ -584,6 +584,60 @@ Table: Functional & NonFunctional Requirements
 
 \pagebreak
 
+# Tools & Libraries
+
+**Visual Studio Code** was used as the primary Integrated Development Environment (IDE) for the project. The algorithm was written in Python, and the following libraries were used:
+
+## `pandas`
+
+Pandas is a software library for the Python programming language that provides data manipulation and analysis capabilities.
+
+We used it to read and manipulate the datasets from the CSV files.
+
+## `matplotlib`
+
+Matplotlib is a plotting library for the Python programming language. It provides an object-oriented API for embedding plots into applications using general-purpose GUI toolkits like Tkinter, wxPython, Qt, or GTK.
+
+We used it to create the plots for the results of the algorithm.
+
+## `numpy`
+
+NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
+
+We used it to generate the points for most of the mathematical function and to generate the random numbers as it's much faster than the built-in python solutions.
+
+## `scienceplots`
+
+SciencePlots is a matplotlib style library that provides style sheets for plots to look like they would fit into a scientific publication.
+
+It was used to make publication-ready plots.
+
+## `scipy`
+
+SciPy is a free and open-source Python library used for scientific computing and technical computing. It contains modules for optimization, linear algebra, integration, interpolation, special functions, FFT, signal and image processing, ODE solvers and other tasks common in science and engineering.
+
+It has optimized built-in functions for the bisection and false position methods, and newton forward difference interpolation.
+
+## `pycryptodome`
+
+PyCryptodome is a self-contained Python library for cryptography operations, such as symmetric encryption, asymmetric encryption, hashes, and digital signatures. It is a fork of the original PyCrypto library and aims to provide a more secure and updated alternative.
+
+We used it to compare the results of the algorithm with AES the well-known encryption algorithm.
+
+## `time`
+
+The time module in Python provides various time-related functions. It is a part of Python's standard library and is used for handling time-related tasks like getting the current time, converting timestamps to readable formats, delaying the execution of functions, and more.
+
+We used it to measure the execution time of each algorithm.
+
+## `string`
+
+The string module in Python includes functions to process standard Python strings. It contains constants for the printable ASCII characters, for various string operations, and for creating custom string transformations.
+
+We used it to convert the plaintext message to an integer representation.
+
+\pagebreak
+
 # Future Work
 
 After the successful implementation of the algorithm, we are planning to work on:
