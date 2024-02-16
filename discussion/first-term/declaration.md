@@ -1,5 +1,5 @@
 \begin{center}
-\Large\textbf{\LARGE Declaration}
+\section{\Large\textbf{\Large Declaration}}
 \end{center}
 
 <!-- \doublespacing -->

@@ -1,20 +1,22 @@
----
+<!-- ---
 title: \begin{title}\centering\vspace*{1cm}\rule{\textwidth}{0.05cm}\linebreak\vspace{0.5cm}{\huge\bfseries Messaging Web Application Using High-Speed Encryption Algorithm with Polynomial Roots \par}\vspace{0.1cm}\hrule\end{title}
 date: February 12, 2024
 abstract: Encryption algorithms play a critical role in protecting sensitive data in the digital age. However, traditional symmetric encryption methods like AES suffer from high computational complexity that hinders performance. Our project proposes a novel polynomial interpolation based encryption algorithm that aims to accelerate encryption and decryption speeds. The algorithm leverages polynomials generated from secret keys. It then uses an efficient hybrid root finding technique called HybridBF to encode messages into ciphertext roots and decode them back to plaintext. Extensive testing on 1000 sample plaintext-key pairs shows the new algorithm is significantly faster than AES for both encryption and decryption. The hybrid root finder combines aspects of bisection and false position methods, demonstrating faster convergence than either individual technique. By exploiting polynomials and highly optimized root finding, this project delivers an encryption algorithm with superior efficiency while maintaining security. The improved performance could enable broader adoption of strong encryption across communication networks and data storage systems. \pagebreak
----
+--- -->
 
 \pagebreak
 
-# Introduction
+\begin{center}
+\section{\textit{Chapter One: Introduction}}
+\end{center}
+
+## Introduction
 
 The ever-evolving landscape of cyber threats demands constant innovation in the field of cryptography. Existing encryption algorithms, while providing valuable protection, are often riddled with limitations. Computational complexity can hinder performance, and the rise of quantum computing casts a shadow on the future of established methods. This project presents a groundbreaking departure from tradition, introducing a novel encryption algorithm that leverages the potent combination of polynomials and root finding methods.
 
 This paper delves into the intricate details of the algorithm, meticulously explaining each step of the encryption and decryption processes. We provide a comprehensive analysis of its performance, Comparing it with established methods such as AES, showcasing its significant speed advantage.
 
-\pagebreak
-
-# Problem & Project Aim
+## Problem & Project Aim
 
 Encryption, regardless of its application, inevitably requires some processing time. This could be for file encryption on a disk or network encryption via a VPN. The extent of this slowdown is contingent on the encryption algorithms employed and, crucially, the proficiency of the programmer who crafted the encryption and decryption code.
 
@@ -24,7 +26,11 @@ The aim of this project is to develop a high-speed encryption algorithm that can
 
 \pagebreak
 
-# Root Finding Methods
+\begin{center}
+\section{\textit{Chapter Two: Numerical Methods}}
+\end{center}
+
+## Root Finding Methods
 
 At the heart of our innovative encryption algorithm lies a powerful mathematical tool: root finding methods. These methods, while seemingly abstract, play a crucial role in ensuring the security and efficiency of our solution. But before we delve into their specific application, let's unpack what they are and why they hold such significance.
 
@@ -40,13 +46,11 @@ They also have a vital role in economics and finance. They are used to calculate
 
 And finally, we will be using root finding methods to solve the polynomial equations that we will be using in our encryption algorithm.
 
-\pagebreak
-
-# Bisection Method
+## Bisection Method
 
 The Bisection Method is a straightforward and reliable numerical method used for solving equations in mathematics, particularly in the field of engineering. It solves equations by repeatedly bisecting an interval and then selecting a subinterval in which a root must lie for further processing.
 
-## How Does the Bisection Method Work?
+### How Does the Bisection Method Work?
 
 If we have a function $f(x)$ that is continuous on the interval $[a, b]$ and $f(a) \cdot f(b) < 0$ (the signals of $f(x)$ at the ends $a$ and $b$ are different), then the function has at least one root in the interval $[a, b]$. The Bisection Method works by repeatedly bisecting the interval and then selecting a subinterval in which a root must lie for further processing. The value of $x$ at the midpoint of the interval is equal to $\frac{a+b}{2}$, if $f(\frac{a+b}{2}) = 0$, then $\frac{a+b}{2}$ is the root of the equation. If $f(a) \cdot f(\frac{a+b}{2}) < 0$, then the root lies in the interval $[a, \frac{a+b}{2}]$, and if $f(\frac{a+b}{2}) \cdot f(b) < 0$, then the root lies in the interval $[\frac{a+b}{2}, b]$. This process is repeated until we reach the desired accuracy.
 
@@ -60,7 +64,7 @@ The accuracy of the Bisection Method can be calculated using the formula:
 
 $$\epsilon = \frac{b-a}{2^{n}}$$
 
-## Bisection Method Advantages
+### Bisection Method Advantages
 
 There are several key advantages to the bisection method:
 
@@ -74,7 +78,7 @@ There are several key advantages to the bisection method:
 
 - In the case of several roots, the bisection procedure is quick.
 
-## Bisection Method Disadvantages
+### Bisection Method Disadvantages
 
 There are also some limitations to the bisection method:
 
@@ -92,11 +96,11 @@ There are also some limitations to the bisection method:
 
 - It cannot be applied over an interval where the function returns values of the same sign.
 
-# False Position Method
+## False Position Method
 
 In mathematics, the regula falsi, method of false position, or false position method is a very old method for solving an equation with one unknown; this method, in modified form, is still in use. In simple terms, the method is the trial and error technique of using test ("false") values for the variable and then adjusting the test value according to the outcome. This is sometimes also referred to as "guess and check". Versions of the method predate the advent of algebra and the use of equations.
 
-## How Does the False Position Method Work?
+### How Does the False Position Method Work?
 
 If we have a function $f(x)$ that is continuous on the interval $[a, b]$ and $f(a) \cdot f(b) < 0$ (the signals of $f(x)$ at the ends $a$ and $b$ are different), then the function has at least one root in the interval $[a, b]$.
 
@@ -106,7 +110,7 @@ $$
 r_{n}=r_{n-1}-\frac{f\left(r_{n-1}\right)\left(r_{n-1}-r_{n-2}\right)}{f\left(r_{n-1}\right)-f\left(r_{n-2}\right)}
 $$
 
-## False Position Method Advantages
+### False Position Method Advantages
 
 There are several key advantages to the false position method:
 
@@ -116,7 +120,7 @@ There are several key advantages to the false position method:
 
 - Does not require derivative: this method does not require derivative calculation.
 
-## False Position Method Disadvantages
+### False Position Method Disadvantages
 
 There are also some limitations to the false position method:
 
@@ -132,7 +136,7 @@ There are also some limitations to the false position method:
 
 - It can not be applied over an interval where the function takes values of the same sign.
 
-# HybridBF Algorithm
+## HybridBF Algorithm
 
 The HybridBF algorithm is a hybrid algorithm between the bisection method and false position method. The algorithm works as follows:
 
@@ -162,7 +166,7 @@ We have also used the same tolerance for each method which is $10^{-14}$
 
 These are the equations that we have used with each method:
 
-## Equations That Serve as Test Cases
+### Equations That Serve as Test Cases
 
 In these equations we have tried to use different types of functions like polynomial, exponential, trigonometric, and logarithmic functions to ensure that the algorithm works with different types of functions. We have also used different intervals with each algorithm depending on where the roots of the equations are.
 
@@ -181,7 +185,7 @@ Table: Test Cases Equations
 | $P9$  | $f(x)=\tan(x)$             |  $[-1, 1]$      |
 | $P10$ | $f(x)=x^4-8x^3+18x^2-9x+1$ |  $[2, 4]$       |
 
-## Extra Equations From Paper
+### Extra Equations From Paper
 
 We got these equations from [this paper](https://www.researchgate.net/publication/360883886_Novel_hybrid_algorithms_for_root_determining_using_advantages_of_open_methods_and_bracketing_methods) and we have used the same intervals too.
 
@@ -205,11 +209,11 @@ Table: Equations From Paper
 | $P24$ | $f(x)=e^x-3x-2$          | $[2,3]$   | Hoffman [22]    |
 | $P25$ | $f(x)=\sin(x)-x^2$       | $[0.5,1]$ | Chapra[17]      |
 
-# Root Finding Algorithms Performance Results
+## Root Finding Algorithms Performance Results
 
 These are the results we got with each method. We have run each method 500 times on each equation and took the average time to get the highest accuracy possible.
 
-## False Position
+### False Position
 
 These are the results we got with False Position method:
 
@@ -262,7 +266,7 @@ These are the results we got with False Position method:
 \end{longtable}
 \end{scriptsize}
 
-## Bisection Method
+### Bisection Method
 
 These are the results we got with Bisection method:
 
@@ -314,7 +318,7 @@ These are the results we got with Bisection method:
 \end{longtable}
 \end{scriptsize}
 
-## Hybrid Method
+### Hybrid Method
 
 These are the results we got with hybrid method:
 
@@ -368,13 +372,13 @@ These are the results we got with hybrid method:
 
 As we see from the table above the hybrid method tend to be faster and take much less iterations than both Bisection and False Position methods.
 
-## Conclusion
+### Conclusion
 
 Our conclusions based on the tables and the plots are:
 
 <!-- > *Side Note: The equation $f(x)=x^3-6x^2+11x-6$ in P5 has two roots. In the false position and hybrid methods, the equation has a root at 1. On the other hand,  the bisection method identifies another root at approximately 2.0000000000000018 within the interval $[1, 2.5]$.* -->
 
-### Iterations
+#### Iterations
 
 ![Iterations Comparison](./images/iterations-comparison.svg)
 
@@ -382,7 +386,7 @@ The hybrid method demonstrates superior performance compared to both the bisecti
 
 As we see here in P21 the false position method have much more number of iterations than both hybrid and bisection methods which will lead to more CPU time as we will see in the next section.
 
-### CPU Time
+#### CPU Time
 
 ![CPU Time Comparison](./images/CPU-time-comparison.svg)
 
@@ -392,7 +396,7 @@ The hybrid method shows significant improvement over the false position method i
 
 As a general trend, the hybrid method is faster than both the bisection and false position methods when it comes to finding the approximate root.
 
-### Function Value
+#### Function Value
 
 ![Function Value Comparison](./images/function-value-comparison.svg)
 
@@ -410,9 +414,17 @@ abstract: Encryption algorithms are vital for securing sensitive data. However, 
 
 \pagebreak
 
-# Encryption Algorithm Steps
+\begin{center}
+\section{\textit{Chapter Three: Cryptographic Algorithms}}
+\end{center}
 
-## Encryption Process
+## Introduction
+
+This chapter provides an overview of the proposed polynomial roots based encryption algorithm. The chapter contains the encryption and decryption processes, the algorithm's steps, and the results of the algorithm's performance compared to AES.
+
+## Polynomia Roots Based Encryption Algorithm Steps
+
+### Encryption Process
 
 The algorithm encrypts plaintext message using a polynomial and root finding method to generate a ciphertext. The encryption process works as follows:
 
@@ -431,7 +443,7 @@ The algorithm encrypts plaintext message using a polynomial and root finding met
 4. Now we have the polynomial and the plaintext integer representation so we will subtract the plaintext integer from the polynomial representation
 5. We get the root of the polynomial which will be the ciphertext using HybridBF algorithm which is a hybrid algorithm between the bisection method and false position method and it will be discussed later.
 
-```{.mermaid caption="Encryption Steps Flowchart" width=25%}
+```{.mermaid caption="Encryption Steps Flowchart" width=30%}
 graph TD
 A[Start] --> B[Take plaintext message]
 B --> C[Convert each 4 characters to an integer]
@@ -443,7 +455,7 @@ G --> H[Find root of polynomial]
 H --> I[End: Root is the Ciphertext]
 ```
 
-## Decryption Process
+### Decryption Process
 
 The algorithm decrypts the ciphertext message using the polynomial. The decryption process works as follows:
 
@@ -452,7 +464,7 @@ The algorithm decrypts the ciphertext message using the polynomial. The decrypti
 3. Now we have the polynomial and the ciphertext so we will substitute the ciphertext in the polynomial to get the plaintext integer representation.
 4. Convert the integer representation to the plaintext message by converting each integer to 4 characters using their ASCII values.
 
-```{.mermaid caption="Decryption Steps Flowchart" width=45%}
+```{.mermaid caption="Decryption Steps Flowchart" width=30%}
 graph TD
 A[Start] --> B[Take ciphertext and key from user]
 B --> C[Generate polynomial using the key]
@@ -462,11 +474,11 @@ E --> F[Convert the integer to the plaintext message]
 F --> G[End: Plaintext message]
 ```
 
-# Results
+## Results
 
 The algorithm was tested using 1000 different plaintext messages and keys and was compared against AES encryption algorithm which is a symmetric encryption algorithm. The results showed that the algorithm is much faster than AES.
 
-## Encode Time Comparison
+### Encode Time Comparison
 
 The algorithm showed a significant improvement in the encoding time compared to AES. The encoding time was measured using the time library in python and the results are shown in this figure:
 
@@ -476,7 +488,7 @@ And when we sum the encoding time for all the 1000 messages we get the following
 
 ![Total Encoding Time Comparison](./images/total_encode_time.svg){width=350px}
 
-## Decode Time Comparison
+### Decode Time Comparison
 
 The algorithm have also showed a significant improvement in the decoding time compared to AES. The results are shown in this figure:
 
@@ -486,7 +498,7 @@ And when we sum the decoding time for all the 1000 messages we get the following
 
 ![Total Decoding Time Comparison](./images/total_decode_time.svg){width=350px}
 
-## Total Time Comparison
+### Total Time Comparison
 
 The total time for both algorithms was also measured and compared. The results are shown in this figure:
 
@@ -498,7 +510,15 @@ And when we sum the total time for all the 1000 messages we get the following re
 
 \pagebreak
 
-# Design & Analysis
+\begin{center}
+\section{\textit{Chapter Four: Design and Analysis}}
+\end{center}
+
+## Introduction
+
+The analysis and design section provides an overview of the proposed system architecture and data flow of the secure messaging web application. This section contains several software engineering diagrams depicting the structural and behavioral models of the system.
+
+To enable secure communication, the application utilizes the cryptographic algorithm based on polynomial roots.
 
 ## Functional & Non-Functional Requirements Table
 
@@ -526,11 +546,13 @@ Table: Functional & NonFunctional Requirements
 | Supportability |                |   $\checkmark$    | To be capable of being supportive.                        | High         | Admin        |
 | Portability    |                |   $\checkmark$    | Application must be able to run in many different system. | High         | Admin        |
 
-## Use Case Diagram
+## Diagrams
 
-![Use Case Diagram](./files/erd-usecase/usecase.svg){width=260px}
+### Use Case Diagram
 
-## Activity Diagram
+![Use Case Diagram](./files/erd-usecase/usecase.svg){width=225px}
+
+### Activity Diagram
 
 ![Sign up Activity Diagram](files/activity/sign_up.drawio.svg)
 
@@ -546,11 +568,11 @@ Table: Functional & NonFunctional Requirements
 
 ![Ban Unban Users Activity Diagram](files/activity/ban_unban_user.drawio.svg)
 
-## Class Diagram
+### Class Diagram
 
-![Class Diagram](files/class-state/class_diag.drawio.png)
+![Class Diagram](files/class-state/class_final.png)
 
-## Sequence Diagram
+### Sequence Diagram
 
 ![Registeration Sequence Diagram](./files/sequence/sequence%20message%20Register.svg)
 
@@ -564,81 +586,85 @@ Table: Functional & NonFunctional Requirements
 
 ![Logout Sequence Diagram](./files/sequence/sequence%20message%20logout%20message.svg)
 
-## State Diagram
+### State Diagram
 
-![Admin & User State Diagrams](files/class-state/User-admin.drawio.svg)
+<!-- ![Admin & User State Diagrams](files/class-state/User-admin.drawio.svg) -->
 
-![State Diagram](files/class-state/final_state.drawio.svg)
+![State Diagram](files/class-state/final_state.drawio.svg){width=600px}
 
-## Context Diagram
+### Context Diagram
 
 ![Context Diagram](files/context-dfd/messaging-sys-context-diagram-1.svg)
 
-## Data Flow Diagram
+### Data Flow Diagram
 
 ![Data Flow Diagram](files/context-dfd/messaging-sys-dfd-1.svg)
 
-## Entity Relationship Diagram
+### Entity Relationship Diagram
 
 ![Entity Relationship Diagram](files/erd-usecase/finish_erd.svg)
 
-\pagebreak
+## Tools & Libraries
 
-# Tools & Libraries
+### Visual Studio Code
 
-**Visual Studio Code** was used as the primary Integrated Development Environment (IDE) for the project. The algorithm was written in Python, and the following libraries were used:
+Visual Studio Code was used as the primary Integrated Development Environment (IDE) for the project. It's a source-code editor developed by Microsoft for Windows, Linux, and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.
 
-## `pandas`
+### Python
+
+The algorithm was written in Python which is a high-level, general-purpose programming language. It is known for its simplicity and easy-to-read syntax. It is widely used in scientific and numeric computing, web development, and artificial intelligence.
+
+The following libraries were used:
+
+#### `pandas`
 
 Pandas is a software library for the Python programming language that provides data manipulation and analysis capabilities.
 
 We used it to read and manipulate the datasets from the CSV files.
 
-## `matplotlib`
+#### `matplotlib`
 
 Matplotlib is a plotting library for the Python programming language. It provides an object-oriented API for embedding plots into applications using general-purpose GUI toolkits like Tkinter, wxPython, Qt, or GTK.
 
 We used it to create the plots for the results of the algorithm.
 
-## `numpy`
+#### `numpy`
 
 NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
 
 We used it to generate the points for most of the mathematical function and to generate the random numbers as it's much faster than the built-in python solutions.
 
-## `scienceplots`
+#### `scienceplots`
 
 SciencePlots is a matplotlib style library that provides style sheets for plots to look like they would fit into a scientific publication.
 
 It was used to make publication-ready plots.
 
-## `scipy`
+#### `scipy`
 
 SciPy is a free and open-source Python library used for scientific computing and technical computing. It contains modules for optimization, linear algebra, integration, interpolation, special functions, FFT, signal and image processing, ODE solvers and other tasks common in science and engineering.
 
 It has optimized built-in functions for the bisection and false position methods, and newton forward difference interpolation.
 
-## `pycryptodome`
+#### `pycryptodome`
 
 PyCryptodome is a self-contained Python library for cryptography operations, such as symmetric encryption, asymmetric encryption, hashes, and digital signatures. It is a fork of the original PyCrypto library and aims to provide a more secure and updated alternative.
 
 We used it to compare the results of the algorithm with AES the well-known encryption algorithm.
 
-## `time`
+#### `time`
 
 The time module in Python provides various time-related functions. It is a part of Python's standard library and is used for handling time-related tasks like getting the current time, converting timestamps to readable formats, delaying the execution of functions, and more.
 
 We used it to measure the execution time of each algorithm.
 
-## `string`
+#### `string`
 
 The string module in Python includes functions to process standard Python strings. It contains constants for the printable ASCII characters, for various string operations, and for creating custom string transformations.
 
 We used it to convert the plaintext message to an integer representation.
 
-\pagebreak
-
-# Future Work
+## Future Work
 
 After the successful implementation of the algorithm, we are planning to work on:
 
@@ -649,6 +675,12 @@ After the successful implementation of the algorithm, we are planning to work on
 - Users will be able to create an account, start conversations, and send send messages. Each message sent through the application is encrypted before it leaves the sender's device and can only be decrypted by the intended recipient. This ensures the privacy and security of the communication, even if the data is intercepted during transmission.
 
 - The application will also include features such as group messaging, file sharing, and message notifications. The user interface will be intuitive and user-friendly, making it easy for users to navigate and use the application.
+
+In our application, we'll employ a combination of symmetric and asymmetric encryption techniques to secure our communications. Our high-speed symmetric encryption algorithm will be used alongside the well-established RSA asymmetric encryption.
+
+The role of the asymmetric encryption, in this case, is to facilitate a secure exchange of the symmetric encryption keys between the communicating parties. This guarantees that the symmetric keys are transmitted securely, allowing only the intended recipient to decrypt the messages.
+
+The symmetric encryption algorithm, on the other hand, will be responsible for the actual message encryption. This ensures the privacy and security of the messages. Furthermore, our algorithm is designed for speed and efficiency, making it an ideal choice for real-time messaging applications.
 
 \pagebreak
 

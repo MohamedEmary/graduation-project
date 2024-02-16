@@ -1,5 +1,5 @@
 \begin{center}
-\Large\textbf{\LARGE Abstract}
+\section{\Large\textbf{\Large Abstract}}
 \end{center}
 
 <!-- \doublespacing -->

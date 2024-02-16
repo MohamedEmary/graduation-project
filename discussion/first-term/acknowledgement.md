@@ -1,5 +1,5 @@
 \begin{center}
-\Large\textbf{\LARGE Acknowledgement}
+\section{\Large\textbf{\Large Acknowledgement}}
 \end{center}
 
 <!-- \doublespacing -->
