@@ -204,3 +204,4 @@ let obj = new BiNew(text, xpoints, ypoints);
 let ciper_text = obj.encryption();
 let decrypted_text = obj.decryption(ciper_text);
 console.log(decrypted_text);
+console.log(text === decrypted_text);
