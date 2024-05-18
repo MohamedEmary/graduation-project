@@ -136,6 +136,44 @@ There are also some limitations to the false position method:
 
 - It can not be applied over an interval where the function takes values of the same sign.
 
+## Secant Method
+
+In numerical analysis, the secant method is a root-finding algorithm that uses a sequence of roots of secant lines to better approximate a root of a function $f$. Unlike the method of false position, which keeps one endpoint fixed, the secant method uses two moving points. The secant method can be thought of as a finite-difference approximation of Newton's method. However, the method was developed independently of Newton's method and predates it by many years.
+
+### How Does the Secant Method Work?
+
+The secant method begins with two initial approximations $x_0$ and $x_1$ for the root. These points should ideally be close to the actual root. The method then uses the secant line through the points $\left(x_0, f(x_0)\right)$ and $\left(x_1, f(x_1)\right)$ to obtain a new approximation $x_2$, which is the x-intercept of this line. The formula for the new approximation is:
+
+$$
+x_{n} = x_{n-1} - f(x_{n-1})\frac{x_{n-1} - x_{n-2}}{f(x_{n-1}) - f(x_{n-2})}
+$$
+
+This process is repeated until the difference between successive approximations is less than a predetermined tolerance level.
+
+### Secant Method Advantages
+
+The secant method has several advantages:
+
+- **Efficiency**: It typically converges faster than the method of false position and bisection method.
+
+- **Simplicity**: It does not require the function's derivative, unlike Newton's method.
+
+- **Flexibility**: It can handle a wide range of functions.
+
+### Secant Method Disadvantages
+
+However, the secant method also has its disadvantages:
+
+- **Convergence is not guaranteed**: If the initial guesses are not close to the actual root, the method may fail to converge.
+
+- **Sensitive to initial guesses**: The closer the initial guesses to the root, the faster the convergence.
+
+- **Possibility of divergence**: If the function is not well-behaved, the secant method can diverge.
+
+- **Multiple roots**: The method may have difficulty distinguishing between multiple roots that are close to each other.
+
+- **Requires two initial values**: Unlike the bisection method, which only needs a single interval, the secant method requires two initial approximations.
+
 ## HybridBF Algorithm
 
 The HybridBF algorithm is a hybrid algorithm between the bisection method and false position method. The algorithm works as follows:
