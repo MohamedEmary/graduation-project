@@ -100,4 +100,4 @@ pd.options.display.float_format = ' {:.16f}'.format
 
 # Save the dataframe to an excel file with the name bisection-table.xlsx
 # Use the float_format argument to set the precision of the numbers in the excel file
-df.to_csv(os.path.join(script_dir, 'bisection-table.csv'), index=False)
+df.to_csv(os.path.join(script_dir, '../results/bisection-table.csv'), index=False)

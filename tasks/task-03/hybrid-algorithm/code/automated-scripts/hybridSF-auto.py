@@ -110,4 +110,4 @@ df = df.rename(columns={'Root': 'Approximate Root',
 pd.options.display.float_format = ' {:.16f}'.format
 
 # Save the dataframe to an excel file with a different name, such as hybrid-table.xlsx
-df.to_csv(os.path.join(script_dir, 'hybridSF-table.csv'), index=False)
+df.to_csv(os.path.join(script_dir, '../results/hybridSF-table.csv'), index=False)

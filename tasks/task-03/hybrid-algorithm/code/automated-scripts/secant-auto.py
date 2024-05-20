@@ -91,4 +91,4 @@ pd.options.display.float_format = ' {:.16f}'.format
 
 # Save the dataframe to an excel file with the name secant-table.csv
 # Use the float_format argument to set the precision of the numbers in the excel file
-df.to_csv(os.path.join(script_dir, 'secant-table.csv'), index=False)
+df.to_csv(os.path.join(script_dir, '../results/secant-table.csv'), index=False)

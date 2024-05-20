@@ -90,4 +90,4 @@ df = df.rename(columns={'Root': 'Approximate Root',
 pd.options.display.float_format = ' {:.16f}'.format
 
 # Save the dataframe to an excel file with a different name, such as false-position-table.xlsx
-df.to_csv(os.path.join(script_dir, 'false-position-table.csv'), index=False)
+df.to_csv(os.path.join(script_dir, '../results/false-position-table.csv'), index=False)
