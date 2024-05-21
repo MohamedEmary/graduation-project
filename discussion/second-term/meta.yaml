@@ -55,12 +55,13 @@ include-before:
   # - '`\newpage{}`{=latex}'
 
 header-includes:
+  - \input{/mnt/movies-and-photos/repos/dotfiles/pandoc/macros.tex}
   # Adjust the vertical spacing between table rows
   - \renewcommand{\arraystretch}{1.3}
 
   # this controls the spacing between bullet list items
-  - \usepackage{enumitem}
-  - \setlist[itemize]{parsep=8pt}
+  # - \usepackage{enumitem}
+  # - \setlist[itemize]{parsep=8pt}
   # - \setlist[enumerate]{itemsep=15pt}
 
   # # Fancy Header
