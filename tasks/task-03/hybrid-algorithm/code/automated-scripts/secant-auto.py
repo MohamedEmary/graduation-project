@@ -77,7 +77,7 @@ df['b'] = df.apply(lambda row: secant(
 df = df.drop(['Function', 'Interval'], axis=1)
 
 # Add the problem column with labels
-df['Problem'] = [f'$P{i+1}$' for i in range(len(functions))]
+df['Problem'] = [f'$P_{{{i+1}}}$' for i in range(len(functions))]
 
 # Reorder the columns
 df = df[['Problem', 'Iter', 'Avg CPU Time', 'Root', 'f(x)', 'a', 'b']]
