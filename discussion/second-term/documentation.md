@@ -554,7 +554,7 @@ As we see here in $P_{21}$ the false position method have much more number of it
 
 The HybridSF method here didn't have the same performance improvement as in the previous case. The secant method is the fastest in terms of iterations, followed by the hybrid method then false position, However There are 7 problems where the HybridSF method is faster than the secant method with 1 or 2 iterations, these are $P_{4}$, $P_{5}$, $P_{7}$, $P_{9}$, $P_{18}$, $P_{19}$, $P_{20}$.
 
-You can also notice that the graph of the secant method is not continuous on $P_{21}$ since secant method is not guaranteed to converge, so it wasn't able to find the root in this problem.
+You can also notice that the graph of the secant method is ***not continuous*** on $P_{21}$ since secant method is not guaranteed to converge, so it wasn't able to find the root in this problem.
 
 ![Iterations Comparison Secant, False Position, HybridSF](./images/new-res/iterations-comparison-SF.svg)
 
@@ -595,6 +595,38 @@ Again the secant method shows an improvement over both the false position and Hy
 This happens in all problems except two $P_4$ in which both HybridSF and false position methods had the nearest value to zero, and $P_{15}$ in which the HybridSF had a value closer to zero.
 
 ![Function Value Comparison Secant, False Position, HybridSF](./images/new-res/function-value-comparison-SF.svg)
+
+#### Secant vs HybridBF
+
+When comparing the results of the fastest two algorithms which are the secant and HybridBF methods, we found the following:
+
+##### Iterations
+
+There is no winner here, the secant method is faster in some problems and the HybridBF method is faster in others but there is a slight advantage for the HybridSF method over the secant method.
+
+![Iterations Comparison Secant, HybridBF](./images/new-res/iterations-comparison-SBF.svg)
+
+##### CPU Time
+
+When comparing the CPU time of both algorithms we found that the secant method is faster in all problems except for 6 problems which are $P_{2}$, $P_{5}$, $P_{6}$, $P_{8}$, $P_{9}$, $P_{14}$.
+
+![CPU Time Comparison Secant, HybridBF](./images/new-res/CPU-time-comparison-SBF.svg)
+
+##### Function Value
+
+When comparing function values with absolute values closer to zero, the results of secant method were better than the HybridBF method in nearly all problems except for $P_{15}$.
+
+![Function Value Comparison Secant, HybridBF](./images/new-res/function-value-comparison-SBF.svg)
+
+\begin{box4}{Used Machine Specifications}
+The results were taken on a machine with the following specifications:
+\begin{itemize}
+    \item Operating System: Linux Mint 21.3 Cinnamon
+    \item Python Version: 3.11.6
+    \item Processor: Intel© Core™ i5-8300H CPU @ 2.30GHz × 4
+    \item Memory: 16GB
+\end{itemize}
+\end{box4}
 
 <!-- 
 ---
