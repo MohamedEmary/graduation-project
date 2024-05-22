@@ -280,8 +280,7 @@ These are the results we got with each method. We have run each method 500 times
 
 These are the results we got with False Position method:
 
-<!-- \fontsize{5}{12}\selectfont -->
-\begin{tiny}
+\fontsize{8}{10}\selectfont
 \begin{longtable}{ccccccc}
     \caption{False Position} \\
     \toprule
@@ -326,13 +325,13 @@ These are the results we got with False Position method:
     $P_{24}$ & 45 & 3.95450592041016E-05 & 2.12539119881113 & -8.88178419700125E-15 & 2.12539119881113 & 3 \\
     $P_{25}$ & 17 & 1.45211219787598E-05 & 0.876726215395055 & 7.88258347483861E-15 & 0.876726215395055 & 1 \\
 \end{longtable}
-\end{tiny}
+\normalsize
 
 ### Bisection Method
 
 These are the results we got with Bisection method:
 
-\begin{tiny}
+\fontsize{8}{10}\selectfont
 \begin{longtable}{ccccccc}
     \caption{Bisection} \label{tab:addlabel} \\
     \toprule
@@ -377,13 +376,13 @@ These are the results we got with Bisection method:
     $P_{24}$ & 46 & 2.39477157592773E-05 & 2.12539119881113 & 0 & 2.12539119881112 & 2.12539119881114 \\
     $P_{25}$ & 47 & 2.58064270019531E-05 & 0.876726215395063 & -8.88178419700125E-16 & 0.87672621539506 & 0.876726215395067 \\
 \end{longtable}
-\end{tiny}
+\normalsize
 
 ### Secant Method
 
 These are the results we got with Secant method:
 
-\begin{tiny}
+\fontsize{8}{10}\selectfont
 \begin{longtable}{ccccccc}
     \caption{Secant} \\
     \toprule
@@ -428,13 +427,13 @@ These are the results we got with Secant method:
     $P_{24}$ & 8 & 3.73697280883789E-06 & 2.12539119881113 & 0 & 2.12539119881113 & 2.12539119881113 \\
     $P_{25}$ & 8 & 3.88669967651367E-06 & 0.876726215395062 & 0 & 0.876726215395062 & 0.876726215395062 \\
 \end{longtable}
-\end{tiny}
+\normalsize
 
 ### HybridBF Method
 
 These are the results we got with HybridBF method:
 
-\begin{tiny}
+\fontsize{8}{10}\selectfont
 \begin{longtable}{ccccccc}
     \caption{HybridBF} \\
     \toprule
@@ -479,7 +478,7 @@ These are the results we got with HybridBF method:
     $P_{24}$ & 9 & 1.03793144226074E-05 & 2.12539119881113 & -6.21724893790088E-15 & 2.1253911988104 & 2.12751913344632 \\
     $P_{25}$ & 7 & 7.85541534423828E-06 & 0.876726215395058 & 4.77395900588817E-15 & 0.876726215388671 & 0.877268445434873 \\
 \end{longtable}
-\end{tiny}
+\normalsize
 
 As we see from the table above the hybrid method tend to be faster and take much less iterations than both Bisection and False Position methods.
 
@@ -487,7 +486,7 @@ As we see from the table above the hybrid method tend to be faster and take much
 
 These are the results we got with HybridSF method:
 
-\begin{tiny}
+\fontsize{8}{10}\selectfont
 \begin{longtable}{ccccccc}
     \caption{HybridSF} \\
     \toprule
@@ -532,7 +531,7 @@ These are the results we got with HybridSF method:
     $P_{24}$ & 23 & 1.71117782592773E-05 & 2.12539119881113 & -1.77635683940025E-15 & 2.12539119881113 & 3 \\
     $P_{25}$ & 9 & 6.75392150878906E-06 & 0.876726215395061 & 1.11022302462516E-15 & 0.876726215395055 & 1 \\
 \end{longtable}
-\end{tiny}
+\normalsize
 
 ### Conclusion
 
@@ -618,8 +617,7 @@ When comparing function values with absolute values closer to zero, the results 
 
 ![Function Value Comparison Secant, HybridBF](./images/new-res/function-value-comparison-SBF.svg)
 
-\begin{box4}{Used Machine Specifications}
-The results were taken on a machine with the following specifications:
+\begin{box4}{Used Machine Specifications: }
 \begin{itemize}
     \item Operating System: Linux Mint 21.3 Cinnamon
     \item Python Version: 3.11.6
