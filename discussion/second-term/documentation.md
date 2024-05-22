@@ -617,12 +617,13 @@ When comparing function values with absolute values closer to zero, the results 
 
 ![Function Value Comparison Secant, HybridBF](./images/new-res/function-value-comparison-SBF.svg)
 
-\begin{box4}{Used Machine Specifications: }
+\begin{box4}{Development Environment: }
 \begin{itemize}
-    % \item \photosymbol{Linux-Light} Operating System: Linux Mint 21.3 Cinnamon
-    % \item \photosymbol{Python-Light} Python Version: 3.11.6
-    \item Operating System: Linux Mint 21.3 Cinnamon
-    \item Python Version: 3.11.6
+    \item \photosymbol{Linux-Light} Operating System: Linux Mint 21.3 Cinnamon
+    \item \photosymbol{Python-Light} Python Version: 3.11.6
+    \item \photosymbol{vscode-Light} Editor: Visual Studio Code 1.89.1
+    % \item Operating System: Linux Mint 21.3 Cinnamon
+    % \item Python Version: 3.11.6
     \item Processor: Intel© Core™ i5-8300H CPU @ 2.30GHz × 4
     \item Memory: 16GB
 \end{itemize}
@@ -654,7 +655,7 @@ This chapter provides an overview of the proposed polynomial roots based encrypt
 
 The algorithm encrypts plaintext message using a polynomial and root finding method to generate a ciphertext. The encryption process works as follows:
 
-1. Take the plaintext message and convert each 4 characters to an integer value using their ASCII values.
+1. Take the plaintext message and convert each 10 characters to an integer value using their ASCII values.
 2. Take the key from the user which will be used to generate the polynomial. The encryption key consists of a set of 5 integer values $x_1$, $x_2$, $y$, $s$, and $r$.
    1. $x_1$ and $x_2$ define $x$ interval for the polynomial.
    2. $y$ defines the start of $y$ interval for the polynomial and the end will be the negative of $y$ to ensure that the polynomial crosses the x-axis and has a root.
@@ -666,19 +667,35 @@ The algorithm encrypts plaintext message using a polynomial and root finding met
    3. Generate points from the two intervals that will be used to generate the polynomial.
    4. Use the random numbers we got $r$ to add some noise to the points.
    5. Apply Newton Forward Difference interpolation to the points to generate the polynomial Since the points are equally spaced.
-4. Now we have the polynomial and the plaintext integer representation so we will subtract the plaintext integer from the polynomial representation
-5. We get the root of the polynomial which will be the ciphertext using HybridBF algorithm which is a hybrid algorithm between the bisection method and false position method and it will be discussed later.
+4. Now we have the polynomial and the plaintext integer representation so we will normalize the plaintext integer representation to be between -1, 1 via this formula:
+
+\begin{multline}
+\begin{gathered}
+T^{'} = \frac{T - min}{max - min} \\
+\text{Where:}
+\begin{cases}
+T & \text{is the original plaintext integer representation} \\
+T^{'} & \text{is the normalized plaintext integer representation} \\
+max & \text{is the maximum value of the plaintext integer representation} \\
+min & \text{is the minimum value of the plaintext integer representation}
+\end{cases}
+\end{gathered}
+\end{multline}
+
+5. We get the root of the polynomial which will be the ciphertext using any of the root finding algorithm mentioned before.
+6. Then we subtract the normalized plaintext integer value from the polynomial representation.
 
 ```{.mermaid caption="Encryption Steps Flowchart" width=30%}
 graph TD
 A[Start] --> B[Take plaintext message]
-B --> C[Convert each 4 characters to an integer]
+B --> C[Convert each 10 characters to an integer]
 C --> D[Take the key from the user]
 D --> E[Generate points using the key]
 E --> F[Apply Newton Forward Difference interpolation to the points]
-F --> G[Subtract plaintext integer from polynomial]
-G --> H[Find root of polynomial]
-H --> I[End: Root is the Ciphertext]
+F --> G[Normalize plaintext value to be between -1, 1]
+G --> H[Subtract normalized plaintext value from polynomial]
+H --> I[Find root of polynomial]
+I --> J[End: Root is the Ciphertext]
 ```
 
 ### Decryption Process
@@ -687,17 +704,24 @@ The algorithm decrypts the ciphertext message using the polynomial. The decrypti
 
 1. Take the ciphertext and the key from the user which will be used to generate the polynomial again.
 2. Use the key to generate the polynomial using the same steps as the encryption process.
-3. Now we have the polynomial and the ciphertext so we will substitute the ciphertext in the polynomial to get the plaintext integer representation.
-4. Convert the integer representation to the plaintext message by converting each integer to 4 characters using their ASCII values.
+3. Now we have the polynomial and the ciphertext so we will substitute the ciphertext in the polynomial to get the normalized plaintext integer representation.
+4. Get the original plaintext integer representation from the normalized plaintext integer representation using the following formula:
+
+$$
+T = ( T^{'} \times (max - min) ) + min
+$$
+
+5. Convert the integer representation to the plaintext message by converting each integer to 10 characters using their ASCII values.
 
 ```{.mermaid caption="Decryption Steps Flowchart" width=30%}
 graph TD
 A[Start] --> B[Take ciphertext and key from user]
 B --> C[Generate polynomial using the key]
 C --> D[Substitute ciphertext in polynomial and get the result]
-D --> E[The result is the plaintext integer representation]
-E --> F[Convert the integer to the plaintext message]
-F --> G[End: Plaintext message]
+D --> E[The result is the normalized plaintext integer representation]
+E --> F[Convert the normalized plaintext integer to the plaintext integer]
+F --> G[Convert the integer to the plaintext message]
+G --> H[End: Plaintext message]
 ```
 
 ## Results
