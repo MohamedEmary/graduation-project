@@ -144,6 +144,9 @@ header-includes:
   - \rfoot{\thepage}
   # - \rfoot{\thepage}
 
+  - \usepackage{skillicons} # \photosymbol{JavaScript}
+  - \usepackage{fontawesome} # \faGithub
+
   - \usepackage{algorithm}
   - \usepackage{algpseudocode}
 ---
