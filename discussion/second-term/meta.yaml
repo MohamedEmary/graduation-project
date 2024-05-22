@@ -79,7 +79,7 @@ header-includes:
 
   # Code blocks linebreaks
   - \usepackage{fvextra}
-  - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+  - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, breaklines, xleftmargin=0.9em, frame=leftline, numbersep=0.45em, rulecolor=\color{black!40!white}, framesep=0.45em}
   # Inline code linebreaks (not working)
   # - \usepackage[htt]{hyphenat}
 
