@@ -728,9 +728,9 @@ F --> G[Convert the integer to the plaintext message]
 G --> H[End: Plaintext message]
 ```
 
-### Algorithm Pseudocode
+## Algorithm Pseudocode
 
-#### Encryption \linebreak
+### Encryption
 
 These are the encryption steps of the IBGA algorithm. The encryption process involves converting each chunk in the plaintext into an integer, generating points using the key, interpolating a polynomial using the points, normalizing the integer plaintext chunk, and finding the ciphertext chunk which is the root of the polynomial we got after subtracting the normalized plaintext chunk from the polynomial. Finally, we append the ciphertext chunk to the ciphertext array.
 
@@ -756,7 +756,7 @@ These are the encryption steps of the IBGA algorithm. The encryption process inv
 \end{algorithmic}
 \end{algorithm}
 
-#### Decryption \linebreak
+### Decryption
 
 These are the decryption steps of the IBGA algorithm. The decryption process is the reverse of the encryption process. We first generate the points using the key, then interpolate the polynomial using the points. We then substitute the ciphertext chunk into the polynomial to get the normalized plaintext chunk. We denormalize the normalized plaintext chunk to get the integer plaintext chunk. Finally, we convert the integer plaintext chunk to a string and append it to the plaintext string.
 
@@ -915,11 +915,11 @@ Table: Functional & NonFunctional Requirements
 
 ## Tools & Libraries
 
-### Visual Studio Code
+### \photosymbol{vscode-Light} Visual Studio Code
 
 Visual Studio Code was used as the primary Integrated Development Environment (IDE) for the project. It's a source-code editor developed by Microsoft for Windows, Linux, and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.
 
-### Python
+### \photosymbol{python-Light} Python
 
 The algorithm was written in Python which is a high-level, general-purpose programming language. It is known for its simplicity and easy-to-read syntax. It is widely used in scientific and numeric computing, web development, and artificial intelligence.
 
