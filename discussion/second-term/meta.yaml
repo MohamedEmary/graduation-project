@@ -28,7 +28,7 @@
 # date: \today
 
 papersize: a4
-# toc-depth:
+toc-depth: 99
 toc: true
 lof: true
 lot: true
