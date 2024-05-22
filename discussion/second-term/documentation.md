@@ -619,6 +619,8 @@ When comparing function values with absolute values closer to zero, the results 
 
 \begin{box4}{Used Machine Specifications: }
 \begin{itemize}
+    % \item \photosymbol{Linux-Light} Operating System: Linux Mint 21.3 Cinnamon
+    % \item \photosymbol{Python-Light} Python Version: 3.11.6
     \item Operating System: Linux Mint 21.3 Cinnamon
     \item Python Version: 3.11.6
     \item Processor: Intel© Core™ i5-8300H CPU @ 2.30GHz × 4
