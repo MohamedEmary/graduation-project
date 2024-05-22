@@ -143,5 +143,8 @@ header-includes:
   - \fancyhead[l]{\textbf{\large \leftmark}}
   - \rfoot{\thepage}
   # - \rfoot{\thepage}
+
+  - \usepackage{algorithm}
+  - \usepackage{algpseudocode}
 ---
 
