@@ -229,7 +229,7 @@ We have also used the same tolerance for each method which is $\epsilon=10^{-14}
 
 These are the equations that we have used with each method:
 
-### Equations That Serve as Test Cases
+## Equations That Serve as Test Cases
 
 In these equations we have tried to use different types of functions like polynomial, exponential, trigonometric, and logarithmic functions to ensure that the algorithm works with different types of functions. We have also used different intervals with each algorithm depending on where the roots of the equations are.
 
@@ -248,7 +248,7 @@ Table: Test Cases Equations
 | $P_{9}$  | $f(x)=\tan(x)$             | $[-1, 1]$      |
 | $P_{10}$ | $f(x)=x^4-8x^3+18x^2-9x+1$ | $[2, 4]$       |
 
-### Extra Equations From Paper
+## Extra Equations From Paper
 
 We got these equations from [this paper](https://www.researchgate.net/publication/360883886_Novel_hybrid_algorithms_for_root_determining_using_advantages_of_open_methods_and_bracketing_methods) and we have used the same intervals too.
 
@@ -642,16 +642,20 @@ abstract: Encryption algorithms are vital for securing sensitive data. However, 
 \pagebreak
 
 \begin{center}
-\section{\textit{Chapter Three: Cryptographic Algorithms}}
+\section{\textit{Chapter Three: IBGA Algorithm}}
 \end{center}
 
 ## Introduction
 
-This chapter provides an overview of the proposed polynomial roots based encryption algorithm. The chapter contains the encryption and decryption processes, the algorithm's steps, and the results of the algorithm's performance compared to AES.
+This chapter provides an overview of the proposed polynomial roots based encryption algorithm IBGA. The chapter contains the encryption and decryption processes, the algorithm's steps, and the results of the algorithm's performance compared to AES.
 
-## Polynomia Roots Based Encryption Algorithm Steps
+\begin{box4}{Note: }
+Unlike BiNew algorithm which is mentioned in the paper, this algorithm doesn't have coefficients rotation step.
+\end{box4}
 
-### Encryption Process
+## IBGA Algorithm Breakdown
+
+### Encryption
 
 The algorithm encrypts plaintext message using a polynomial and root finding method to generate a ciphertext. The encryption process works as follows:
 
@@ -698,7 +702,7 @@ H --> I[Find root of polynomial]
 I --> J[End: Root is the Ciphertext]
 ```
 
-### Decryption Process
+### Decryption
 
 The algorithm decrypts the ciphertext message using the polynomial. The decryption process works as follows:
 
@@ -723,6 +727,61 @@ E --> F[Convert the normalized plaintext integer to the plaintext integer]
 F --> G[Convert the integer to the plaintext message]
 G --> H[End: Plaintext message]
 ```
+
+### Algorithm Pseudocode
+
+#### Encryption \linebreak
+
+These are the encryption steps of the IBGA algorithm. The encryption process involves converting each chunk in the plaintext into an integer, generating points using the key, interpolating a polynomial using the points, normalizing the integer plaintext chunk, and finding the ciphertext chunk which is the root of the polynomial we got after subtracting the normalized plaintext chunk from the polynomial. Finally, we append the ciphertext chunk to the ciphertext array.
+
+\begin{algorithm}[H]
+\caption{IBGA Algorithm Encryption Steps}
+\begin{algorithmic}[1]
+\State \textbf{Input: $plaintext, key$}
+\State \textbf{Output: $ciphertext$}
+\Procedure{Encryption}{$plaintext, key$}
+\State $x_1, x_2, y, s, r \gets key$
+\State Initialize $ciphertext$ as an empty array
+\For{each $chunk$ in $plaintext$} \Comment{Each $chunk$ is 10 characters}
+    \State $integer\_plaintext \gets \Call{ConvertToInteger}{chunk}$
+    \State $points \gets \Call{GeneratePoints}{x_1, x_2, y, s, r}$
+    \State $polynomial \gets \Call{NewtonInterpolation}{points}$
+    \State $normalized\_plaintext \gets \Call{Normalize}{integer\_plaintext}$
+    \State $new\_polynomial \gets polynomial - normalized\_plaintext$
+    \State $ciphertext\_chunk \gets \Call{FindRoot}{new\_polynomial}$
+    \State Append $ciphertext\_chunk$ to $ciphertext$ array
+\EndFor
+\State \Return $ciphertext$ array
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+#### Decryption \linebreak
+
+These are the decryption steps of the IBGA algorithm. The decryption process is the reverse of the encryption process. We first generate the points using the key, then interpolate the polynomial using the points. We then substitute the ciphertext chunk into the polynomial to get the normalized plaintext chunk. We denormalize the normalized plaintext chunk to get the integer plaintext chunk. Finally, we convert the integer plaintext chunk to a string and append it to the plaintext string.
+
+\begin{algorithm}[H]
+\caption{IBGA Algorithm Decryption Steps}
+\begin{algorithmic}[1]
+\Procedure{Decryption}{$ciphertext, key$}
+\State \textbf{Input: $ciphertext, key$}
+\State \textbf{Output: $plaintext$}
+\State $x_1, x_2, y, s, r \gets key$
+\State Initialize $plaintext$ as an empty string
+\For{each $ciphertext\_chunk$ in $ciphertext$ array}\\
+    \Comment{$ciphertext\_chunk$ is the number we got from encrypting each text chunk}
+    \State $points \gets \Call{GeneratePoints}{x_1, x_2, y, s, r}$
+    \State $polynomial \gets \Call{NewtonInterpolation}{points}$
+    \State $normalized\_plaintext \gets polynomial(ciphertext\_chunk)$
+    \State $integer\_plaintext \gets \Call{Denormalize}{normalized\_plaintext}$
+    \State $plaintext\_chunk \gets \Call{ConvertToCharacters}{integer\_plaintext}$
+    % \State $plaintext\_chunk \gets \Call{ConvertToCharacters}{normalized\_plaintext}$
+    \State Append $plaintext\_chunk$ to $plaintext$ string
+\EndFor
+\State \Return $plaintext$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
 ## Results
 
