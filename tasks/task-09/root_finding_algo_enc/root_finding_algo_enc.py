@@ -7,20 +7,9 @@ import pandas as pd
 import string
 import random
 from time import time
-import matplotlib.pyplot as plt
-# %matplotlib inline
 
-# **Define The Global Notebook Settings:**
-warnings.filterwarnings("ignore")
-pd.set_option("display.max_rows", 50)
-pd.set_option("display.max_columns", 500)
-plt.rcParams.update({'font.size': 14})
-plt.style.use(['science', 'no-latex'])
-plt.rcParams['font.family'] = 'Times New Roman'
 
 # # **Define The Global Variables:**
-
-
 def get_random_8chars(chars_length, n_sambles):
     random_chars = []
     for i in range(0, n_sambles, 1):
@@ -55,12 +44,13 @@ max_rep = int.from_bytes(
 print(min_rep, max_rep)
 
 text_samples = []
-text_sizes = [5000, 7500, 10000, 12500, 15000,
-              17500, 20000, 22500, 25000, 27500, 30000]
-
 
 # text_sizes = [50, 75, 100, 125, 150,
 #               175, 200, 225, 250, 275, 300]
+
+text_sizes = [5000, 7500, 10000, 12500, 15000,
+              17500, 20000, 22500, 25000, 27500, 30000]
+
 
 for size in text_sizes:
     text_samples.append(get_random_8chars(block_size, size))
