@@ -140,12 +140,11 @@ header-includes:
   - \pagestyle{fancy}
   - \fancyhf{}
   - \renewcommand{\headrulewidth}{2pt}
-  - \fancyhead[l]{\textbf{\large \leftmark}}
-  - \rfoot{\thepage}
-  # - \rfoot{\thepage}
+  - \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+  - \fancyhead[l]{\textit{\nouppercase{\leftmark}}}
 
   - \usepackage{skillicons} # \photosymbol{JavaScript}
-  - \usepackage{fontawesome} # \faGithub
+  - \usepackage{fontawesome5} #  \faBell[regular] OR \faIcon[regular]{bell}
 
   - \usepackage{algorithm}
   - \usepackage{algpseudocode}
