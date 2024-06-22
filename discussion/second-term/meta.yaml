@@ -141,7 +141,8 @@ header-includes:
   - \fancyhf{}
   - \renewcommand{\headrulewidth}{2pt}
   - \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
-  - \fancyhead[l]{\textit{\nouppercase{\leftmark}}}
+  - \fancyhead[l]{\textit{\fontsize{14}{0}\selectfont\nouppercase{\leftmark}}}
+  - \rfoot{\thepage}
 
   - \usepackage{skillicons} # \photosymbol{JavaScript}
   - \usepackage{fontawesome5} #  \faBell[regular] OR \faIcon[regular]{bell}
