@@ -547,7 +547,7 @@ As you see in the plot below the HybridBF method demonstrates superior performan
 
 As we see here in $P_{21}$ the false position method have much more number of iterations than both hybrid and bisection methods which will lead to more CPU time as we will see in the next section.
 
-![Iterations Comparison Bisection, False Position, HybridBF](./images/new-res/iterations-comparison-BF.svg)
+![Iterations Comparison Bisection, False Position, HybridBF](images/plots/root-finding-algo/iterations-comparison-BF.svg)
 
 ##### Secant, False Position, HybridSF
 
@@ -555,7 +555,7 @@ The HybridSF method here didn't have the same performance improvement as in the 
 
 You can also notice that the graph of the secant method is ***not continuous*** on $P_{21}$ since secant method is not guaranteed to converge, so it wasn't able to find the root in this problem.
 
-![Iterations Comparison Secant, False Position, HybridSF](./images/new-res/iterations-comparison-SF.svg)
+![Iterations Comparison Secant, False Position, HybridSF](images/plots/root-finding-algo/iterations-comparison-SF.svg)
 
 #### CPU Time
 
@@ -567,7 +567,7 @@ It also shows an improvement over the false position method in terms of CPU time
 
 As a general trend, the hybrid method is faster than both the bisection and false position methods when it comes to finding the approximate root.
 
-![CPU Time Comparison Bisection, False Position, HybridBF](./images/new-res/CPU-time-comparison-BF.svg)
+![CPU Time Comparison Bisection, False Position, HybridBF](images/plots/root-finding-algo/CPU-time-comparison-BF.svg)
 
 ##### Secant, False Position, HybridSF
 
@@ -575,7 +575,7 @@ As a result of secant method having less number of iterations than both HybridSF
 
 This happens in all problems except only two problems which are $P_5$, $P_9$ where the HybridSF method is *slightly* faster than the secant method.
 
-![CPU Time Comparison Secant, False Position, HybridSF](./images/new-res/CPU-time-comparison-SF.svg)
+![CPU Time Comparison Secant, False Position, HybridSF](images/plots/root-finding-algo/CPU-time-comparison-SF.svg)
 
 #### Function Value
 
@@ -585,7 +585,7 @@ The hybrid method outperforms both the bisection and false position methods in t
 
 This happens in all problems except only one problem $P_{24}$ in which the bisection method had the nearest value to zero.
 
-![Function Value Comparison Bisection, False Position, HybridBF](./images/new-res/function-value-comparison-BF.svg)
+![Function Value Comparison Bisection, False Position, HybridBF](images/plots/root-finding-algo/function-value-comparison-BF.svg)
 
 ##### Secant, False Position, HybridSF
 
@@ -593,7 +593,7 @@ Again the secant method shows an improvement over both the false position and Hy
 
 This happens in all problems except two $P_4$ in which both HybridSF and false position methods had the nearest value to zero, and $P_{15}$ in which the HybridSF had a value closer to zero.
 
-![Function Value Comparison Secant, False Position, HybridSF](./images/new-res/function-value-comparison-SF.svg)
+![Function Value Comparison Secant, False Position, HybridSF](images/plots/root-finding-algo/function-value-comparison-SF.svg)
 
 #### Secant vs HybridBF
 
@@ -603,19 +603,19 @@ When comparing the results of the fastest two algorithms which are the secant an
 
 There is no winner here, the secant method is faster in some problems and the HybridBF method is faster in others but there is a slight advantage for the HybridSF method over the secant method.
 
-![Iterations Comparison Secant, HybridBF](./images/new-res/iterations-comparison-SBF.svg)
+![Iterations Comparison Secant, HybridBF](images/plots/root-finding-algo/iterations-comparison-SBF.svg)
 
 ##### CPU Time
 
 When comparing the CPU time of both algorithms we found that the secant method is faster in all problems except for 6 problems which are $P_{2}$, $P_{5}$, $P_{6}$, $P_{8}$, $P_{9}$, $P_{14}$.
 
-![CPU Time Comparison Secant, HybridBF](./images/new-res/CPU-time-comparison-SBF.svg)
+![CPU Time Comparison Secant, HybridBF](images/plots/root-finding-algo/CPU-time-comparison-SBF.svg)
 
 ##### Function Value
 
 When comparing function values with absolute values closer to zero, the results of secant method were better than the HybridBF method in nearly all problems except for $P_{15}$.
 
-![Function Value Comparison Secant, HybridBF](./images/new-res/function-value-comparison-SBF.svg)
+![Function Value Comparison Secant, HybridBF](images/plots/root-finding-algo/function-value-comparison-SBF.svg)
 
 \begin{box4}{Development Environment: }
 \begin{itemize}
