@@ -985,7 +985,7 @@ Table: Functional & NonFunctional Requirements
 
 ### Context Diagram
 
-![Context Diagram](files/context-dfd/messaging-sys-context-diagram-1.svg)
+![Context Diagram](files/context-dfd/context.svg)
 
 ### Data Flow Diagram
 
@@ -995,11 +995,73 @@ Table: Functional & NonFunctional Requirements
 
 ![Entity Relationship Diagram](files/erd-usecase/finish_erd.svg)
 
+## Application Screenshots
+
+These are some screenshots to show the application interface and how it looks like.
+
+### Sign Up Page
+
+This is the sign-up page where the user can create an account by providing his name, email, password, and profile picture.
+
+![Sign Up Page](images/app-screenshots/sign-up.png)
+
+### Sign In Page
+
+This is the sign-in page where the user can log in by providing his email and password.
+
+![Sign In Page](images/app-screenshots/sign-in.png)
+
+### Home Page
+
+This is the home page where the user can start chatting with anybody.
+
+![Home Page](images/app-screenshots/start-chatting-page.png)
+
+\pagebreak
+
+### Team Messages
+
+This is the team messages page where the user can chat with multiple users at the same time.
+
+![Team Messages](images/app-screenshots/team-messages.png)
+
+### Messages in Chat
+
+This is the normal look of the messages in chat.
+
+![Chat](images/app-screenshots/chat-normal-look.png)
+
+\pagebreak
+
+### Messages Behind the Scenes
+
+This is how the messages text looks like behind the scenes.
+
+![Messages Behind the Scenes](images/app-screenshots/chat-behind-the-scenes.png)
+
+### Messages in Stream
+
+This is how the messages look like in the stream.js library.
+
+![Messages in Stream](images/app-screenshots/encrypted-messages-in-stream.png)
+
 ## Tools & Libraries
 
 ### \photosymbol{vscode-Light} Visual Studio Code
 
 Visual Studio Code was used as the primary Integrated Development Environment (IDE) for the project. It's a source-code editor developed by Microsoft for Windows, Linux, and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.
+
+### \photosymbol{git} Git
+
+Git is a distributed version control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files.
+
+We used it to manage the project files and collaborate on the project.
+
+#### \photosymbol{github-dark} GitHub
+
+GitHub is a web-based platform used for version control and collaboration. It provides features like bug tracking, feature requests, task management, and wikis for every project.
+
+We used it to host the project repository and collaborate on the project.
 
 ### \photosymbol{python-Light} Python
 
@@ -1037,12 +1099,6 @@ SciPy is a free and open-source Python library used for scientific computing and
 
 It has optimized built-in functions for the bisection and false position methods, and newton forward difference interpolation.
 
-#### `pycryptodome`
-
-PyCryptodome is a self-contained Python library for cryptography operations, such as symmetric encryption, asymmetric encryption, hashes, and digital signatures. It is a fork of the original PyCrypto library and aims to provide a more secure and updated alternative.
-
-We used it to compare the results of the algorithm with AES the well-known encryption algorithm.
-
 #### `time`
 
 The time module in Python provides various time-related functions. It is a part of Python's standard library and is used for handling time-related tasks like getting the current time, converting timestamps to readable formats, delaying the execution of functions, and more.
@@ -1055,23 +1111,81 @@ The string module in Python includes functions to process standard Python string
 
 We used it to convert the plaintext message to an integer representation.
 
-## Future Work
+#### `random`
 
-After the successful implementation of the algorithm, we are planning to work on:
+The random module in Python is used to generate random numbers. It can be used to generate random integers, random sequences, and random choices. It can also be used to shuffle sequences.
 
-- Create a messaging application that uses the algorithm to secure the messages. The application will be a web application that will allow users to send and receive messages securely.
+#### `os`
 
-- The messaging application will feature end-to-end encryption, ensuring that only the intended recipient can read the messages. This is achieved by implementing our unique high-speed encryption algorithm.
+The os module in Python provides a way of using operating system-dependent functionality. The functions that the OS module provides allows you to interface with the underlying operating system that Python is running on – be that Windows, Mac or Linux.
 
-- Users will be able to create an account, start conversations, and send send messages. Each message sent through the application is encrypted before it leaves the sender's device and can only be decrypted by the intended recipient. This ensures the privacy and security of the communication, even if the data is intercepted during transmission.
+We used it to get the current working directory and to read the CSV files.
 
-- The application will also include features such as group messaging, file sharing, and message notifications. The user interface will be intuitive and user-friendly, making it easy for users to navigate and use the application.
+#### `Decimal`
 
-In our application, we'll employ a combination of symmetric and asymmetric encryption techniques to secure our communications. Our high-speed symmetric encryption algorithm will be used alongside the well-established RSA asymmetric encryption.
+The decimal module provides support for fast correctly-rounded decimal floating point arithmetic. It offers several advantages over the float datatype.
+
+We used it to handle the decimal numbers in the algorithm.
+
+### Stream.js
+
+Stream.js is a JavaScript library for building real-time web applications. It provides a simple and flexible API for building real-time messaging applications.
+
+We used it to create the real-time messaging feature in the application.
+
+### \photosymbol{html} HTML5
+
+HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and current major version of the HTML standard.
+
+We used it to create the front-end of the application.
+
+### \photosymbol{css} CSS3
+
+CSS3 is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.1. It brings a lot of long-awaited novelties, like rounded corners, shadows, gradients, transitions, or animations, as well as new layouts like multi-columns, flexible box, or grid layouts.
+
+We used it to style the front-end of the application.
+
+### \photosymbol{JavaScript} JavaScript
+
+JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is a lightweight, cross-platform, and open-source language.
+
+We used it to create the interactive features of the application.
+
+### \photosymbol{nodejs-light} Node.js
+
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
+
+We used it to run the server-side code of the application.
+
+### \photosymbol{React-light} React
+
+React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.
+
+We used it to create the front-end of the application.
+
+### \photosymbol{Markdown-Light} Markdown
+
+Markdown is a lightweight markup language with plain-text-formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML.
+
+We used it to write the documentation.
+
+### Mermaid
+
+Mermaid is a simple markdown-like script language for generating charts from text via JavaScript. It is used to create diagrams like flowcharts, sequence diagrams, and Gantt charts.
+
+We used it to create the diagrams in this document.
+
+### Pandoc
+
+Pandoc is a free and open-source document converter, widely used as a writing tool and as a basis for publishing workflows.
+
+We used it to convert the markdown files to PDF via \LaTeX.
+
+<!-- In our application, we'll employ a combination of symmetric and asymmetric encryption techniques to secure our communications. Our high-speed symmetric encryption algorithm will be used alongside the well-established RSA asymmetric encryption.
 
 The role of the asymmetric encryption, in this case, is to facilitate a secure exchange of the symmetric encryption keys between the communicating parties. This guarantees that the symmetric keys are transmitted securely, allowing only the intended recipient to decrypt the messages.
 
-The symmetric encryption algorithm, on the other hand, will be responsible for the actual message encryption. This ensures the privacy and security of the messages. Furthermore, our algorithm is designed for speed and efficiency, making it an ideal choice for real-time messaging applications.
+The symmetric encryption algorithm, on the other hand, will be responsible for the actual message encryption. This ensures the privacy and security of the messages. Furthermore, our algorithm is designed for speed and efficiency, making it an ideal choice for real-time messaging applications. -->
 
 \pagebreak
 
