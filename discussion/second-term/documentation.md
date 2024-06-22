@@ -785,37 +785,121 @@ These are the decryption steps of the IBGA algorithm. The decryption process is 
 
 ## Results
 
-The algorithm was tested using 1000 different plaintext messages and keys and was compared against AES encryption algorithm which is a symmetric encryption algorithm. The results showed that the algorithm is much faster than AES.
+We evaluated the performance of our proposed algorithm against established root finding algorithms. This evaluation compared CPU time across various text sizes and polynomial degrees in terms of encryption decryption and total times. Following this analysis, we selected the most efficient numerical method for further testing. Subsequently, we compared our algorithm's performance to the widely used AES symmetric encryption algorithm. The results demonstrated that our algorithm exhibits significantly faster execution times, particularly for larger text sizes.
 
-### Encode Time Comparison
+### With Different Root Finding Algorithms
 
-The algorithm showed a significant improvement in the encoding time compared to AES. The encoding time was measured using the time library in python and the results are shown in this figure:
+We tested our algorithm with different root finding algorithms to determine the most efficient method. We compared the CPU time of the Bisection, False Position, HybridBF, Secant, and HybridSF methods. The results showed that the Secant method was the fastest for all encryption, decryption, and total times in terms of all text sizes and polynomial degrees and the Bisection method consistently exhibited the slowest performance across all evaluated text sizes and polynomial degrees.
 
-![Encoding Time Comparison](./images/total-encode-time-comparison.svg)
+The other methods showed nearly similar performance in terms of CPU time, with the HybridSF method demonstrating slightly faster execution times compared to other methods. The HybridBF method exhibited comparable performance to the False Position method across evaluated text sizes.
 
-And when we sum the encoding time for all the 1000 messages we get the following results:
+#### Different Degrees
 
-![Total Encoding Time Comparison](./images/total_encode_time.svg){width=350px}
+We compared the CPU time of the root finding algorithms for different polynomial degrees from 2 to 6. The results showed that the Secant method was the fastest for all degrees in terms of all encryption, decryption, and total times. The HybridSF method was the second fastest and the Bisection method consistently exhibited the slowest performance across all polynomial degrees.
 
-### Decode Time Comparison
+##### Encryption Time
 
-The algorithm have also showed a significant improvement in the decoding time compared to AES. The results are shown in this figure:
+As illustrated in the plot, the secant method (depicted by the dotted line) emerged as the most efficient approach in terms of CPU time required for the encryption process. Notably, all other evaluated methods exhibited slower execution times. The bisection method, in particular, demonstrated significantly lower performance compared to the remaining algorithms.
 
-![Decoding Time Comparison](images/total-decode-time-comparison.svg)
+![Root Finding Algorithms Encryption Time With Different Degrees](images/plots/root-finding-algo-enc/different_deg_enc_time.svg)
 
-And when we sum the decoding time for all the 1000 messages we get the following results:
+##### Decryption Time
 
-![Total Decoding Time Comparison](./images/total_decode_time.svg){width=350px}
+The decryption process in our algorithm involves direct polynomial evaluation using the ciphertext. Consequently, the choice of the root-finding algorithm employed during encryption has no effect on decryption time. This explains the observed consistency in decryption times across the various root-finding methods.
 
-### Total Time Comparison
+![Root Finding Algorithms Decryption Time With Different Degrees](images/plots/root-finding-algo-enc/different_deg_dec_time.svg)
 
-The total time for both algorithms was also measured and compared. The results are shown in this figure:
+##### Total Time
 
-![Total Time Comparison](./images/total-time-comparison.svg)
+The total time required for both encryption and decryption processes is directly influenced by the root-finding algorithm employed during encryption. As depicted in the plot, the secant method consistently achieved the fastest processing times across all evaluated polynomial degrees. Conversely, the bisection method exhibited the slowest performance throughout the experiments. This trend underlines the critical role of selecting an efficient root-finding algorithm to optimize the overall execution time of the encryption and decryption processes.
 
-And when we sum the total time for all the 1000 messages we get the following results:
+![Root Finding Algorithms Total Time With Different Degrees](images/plots/root-finding-algo-enc/different_deg_total_time.svg)
 
-![Total Time Comparison](./images/total_time.svg){width=350px}
+#### Different File sizes
+
+We also evaluated the performance of the root-finding algorithms across varying text sizes. The results demonstrated that the secant method consistently exhibited the fastest execution times for all file sizes. Conversely, the bisection method consistently demonstrated the slowest performance across all evaluated file sizes.
+
+##### Encryption Time
+
+The secant method consistently outperformed all other root-finding algorithms in terms of encryption time across all evaluated file sizes. The bisection method exhibited the slowest performance, with significantly higher CPU times compared to the remaining algorithms.
+
+Furthermore, the analysis identified that the HybridBF method displayed identical performance to the False Position method for all file sizes. The HybridSF method demonstrated slightly slower execution times compared to both HybridBF and False Position methods.
+
+![Root Finding Algorithms Encryption Time With Different File Sizes](images/plots/root-finding-algo-enc/different_sizes_enc_time.svg)
+
+##### Decryption Time
+
+The decryption process in our algorithm involves direct polynomial evaluation using the ciphertext. Consequently, the choice of the root-finding algorithm employed during encryption has no effect on decryption time. This explains the observed consistency in decryption times across the various root-finding methods.
+
+![Root Finding Algorithms Decryption Time With Different File Sizes](images/plots/root-finding-algo-enc/different_sizes_dec_time.svg)
+
+##### Total Time
+
+The total time required for both encryption and decryption processes is directly influenced by the root-finding algorithm employed during encryption. As depicted in the plot, the secant method consistently achieved the fastest processing times across all evaluated file sizes. Conversely, the bisection method exhibited the slowest performance throughout the experiments. This trend underlines the critical role of selecting an efficient root-finding algorithm to optimize the overall execution time of the encryption and decryption processes.
+
+![Root Finding Algorithms Total Time With Different File Sizes](images/plots/root-finding-algo-enc/different_sizes_total_time.svg)
+
+### Against AES
+
+We compared the performance of our proposed algorithm against the widely used AES symmetric encryption algorithm. The results demonstrated that our algorithm exhibited significantly faster execution times for all evaluated text sizes.
+
+#### Different Text Sizes
+
+We evaluated the performance of our algorithm against AES for different text sizes ranging from 5000 to 30000 bytes which is nearly equivalent to 50000 to 300000 characters. The results showed that our algorithm outperformed AES in terms of CPU time for decryption, and total times across all evaluated text sizes, but it was slower in terms of encryption time.
+
+##### Encryption Time
+
+The plot illustrates the encryption time comparison between our algorithm and AES for different text sizes. Our algorithm had slower execution times compared to AES for all evaluated text sizes. This is attributed to the complexity of the encryption process in our algorithm, which involves polynomial interpolation and root finding. In contrast, the encryption process in AES is more straightforward and less computationally intensive.
+
+![Encryption Time Comparison](images/plots/aes-ibga/encryption_time_comparison.svg)
+
+##### Decryption Time
+
+The decryption time comparison between our algorithm and AES revealed that our algorithm consistently outperformed AES for all evaluated text sizes. This superior performance can be attributed to the direct polynomial evaluation process employed during decryption, which is more efficient compared to the decryption process in AES.
+
+![Decryption Time Comparison](images/plots/aes-ibga/decryption_time_comparison.svg)
+
+##### Total Time
+
+The total time comparison between our algorithm and AES demonstrated that our algorithm exhibited faster execution times for all evaluated text sizes.
+
+This superior performance is attributed to the efficient decryption process in our algorithm, which directly evaluates the polynomial using the ciphertext. In contrast, the decryption process in AES is more complex and computationally intensive, resulting in slower execution times.
+
+![Total Time Comparison](images/plots/aes-ibga/total_time_comparison.svg)
+
+#### Different Polynomial Degrees
+
+We evaluated the performance of our algorithm against AES We used different polynomial degrees from 2 to 6 in our algorithm and different key sizes in AES from 12 characters to 60 characters.
+
+The results showed that the AES performance was consistent across all evaluated key sizes. In contrast, our algorithm exhibited faster execution times for lower polynomial degrees and slower execution times for higher polynomial degrees. This trend can be attributed to the increased computational complexity associated with higher polynomial degrees.
+
+##### Encryption Time
+
+The plot illustrates the encryption time comparison between our algorithm and AES for different polynomial degrees and key sizes. Our algorithm demonstrated slower execution times compared to AES for all evaluated polynomial degrees and the key sizes. This is attributed to the increased computational complexity associated with higher polynomial degrees in our algorithm.
+
+We can also notice that the encryption time for our algorithm increases as the polynomial degree increases. This is due to the increased computational complexity associated with higher polynomial degrees. In contrast, the encryption time for AES remains consistent across all evaluated key sizes.
+
+![Encryption Time Comparison](images/plots/aes-ibga/encryption_time_comparison_deg.svg)
+
+##### Decryption Time
+
+The decryption time comparison between our algorithm and AES revealed that our algorithm consistently outperformed AES for all evaluated polynomial degrees and key sizes. This superior performance can be attributed to the direct polynomial evaluation process employed during decryption, which is more efficient compared to the decryption process in AES.
+
+![Decryption Time Comparison](images/plots/aes-ibga/decryption_time_comparison_deg.svg)
+
+##### Total Time
+
+The total time comparison between our algorithm and AES demonstrated that our algorithm exhibited faster execution times in the lower polynomial degrees and slower execution times in the higher polynomial degrees.
+
+![Total Time Comparison](images/plots/aes-ibga/total_time_comparison_deg.svg)
+
+### Final Thoughts
+
+The results of our algorithm evaluation demonstrated that the IBGA algorithm exhibits significantly faster execution times compared to AES for both encryption and decryption processes. This superior performance can be attributed to the direct polynomial evaluation process employed during decryption, which is more efficient compared to the decryption process in AES.
+
+\begin{box4}{Development Environment: }
+We have used the same development environment as mentioned in the previous chapter.
+\end{box4}
 
 \pagebreak
 
@@ -833,9 +917,7 @@ To enable secure communication, the application utilizes the cryptographic algor
 
 Table: Functional & NonFunctional Requirements
 
-<!-- | ------------------ | :----------------: | :-------------------: | --------------------------------------------------------- | ------------ | ---------------- | -->
-
-| Name           | Functional | NonFunctional | Description                                           | Priority | Actor    |
+| Name           | Functional | Non Functional | Description                                           | Priority | Actor    |
 | ------------------ | :----------------: | :-------------------: | --------------------------------------------------------- | ------------ | ---------------- |
 | Registration   |  $\checkmark$  |                   | Functionality to create account.                          | High         | User & Admin |
 | Login          |  $\checkmark$  |                   | Functionality to get access.                              | High         | User & Admin |
