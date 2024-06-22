@@ -104,7 +104,7 @@ plt.plot(polynomials_degrees,
 plt.xlabel('Degree')
 plt.ylabel('Encryption Time')
 plt.title(
-    'Encryption Time with Different Degrees for Bisection, False Position, Secant')
+    'Encryption Time with Different Degrees for Bisection, False Position, Secant, HybridBF, HybridSF')
 
 # Set xticks to only integer degrees
 plt.xticks(np.arange(min(polynomials_degrees),
@@ -128,7 +128,7 @@ plt.plot(text_sizes, hybridsf_different_sizes_enc, label='HybridSF')
 plt.xlabel('File Size')
 plt.ylabel('Encryption Time')
 plt.title(
-    'Encryption Time with Different File Sizes for Bisection, False Position, Secant')
+    'Encryption Time with Different File Sizes for Bisection, False Position, Secant, HybridBF, HybridSF')
 plt.legend()
 plt.savefig(os.path.join(
     script_dir, "./different_sizes_enc_time.svg"), format="svg")
@@ -146,7 +146,7 @@ plt.plot(text_sizes, hybridsf_different_sizes_dec, label='HybridSF')
 plt.xlabel('File Size')
 plt.ylabel('Decryption Time')
 plt.title(
-    'Decryption Time with Different File Sizes for Bisection, False Position, Secant')
+    'Decryption Time with Different File Sizes for Bisection, False Position, Secant, HybridBF, HybridSF')
 plt.legend()
 plt.savefig(os.path.join(
     script_dir, "./different_sizes_dec_time.svg"), format="svg")
@@ -169,7 +169,7 @@ plt.plot(polynomials_degrees,
 plt.xlabel('Degree')
 plt.ylabel('Decryption Time')
 plt.title(
-    'Decryption Time with Different Degrees for Bisection, False Position, Secant')
+    'Decryption Time with Different Degrees for Bisection, False Position, Secant, HybridBF, HybridSF')
 plt.legend()
 # Set xticks to only integer degrees
 plt.xticks(np.arange(min(polynomials_degrees),
@@ -192,7 +192,7 @@ plt.plot(polynomials_degrees, hybridsf_different_deg_total, label='HybridSF')
 
 plt.xlabel('Degree')
 plt.ylabel('Total Time')
-plt.title('Total Time with Different Degrees for Bisection, False Position, Secant')
+plt.title('Total Time with Different Degrees for Bisection, False Position, Secant, HybridBF, HybridSF')
 plt.legend()
 # Set xticks to only integer degrees
 plt.xticks(np.arange(min(polynomials_degrees),
@@ -214,7 +214,7 @@ plt.plot(text_sizes, hybridsf_different_sizes_total, label='HybridSF')
 plt.xlabel('File Size')
 plt.ylabel('Total Time')
 plt.title(
-    'Total Time with Different File Sizes for Bisection, False Position, Secant')
+    'Total Time with Different File Sizes for Bisection, False Position, Secant, HybridBF, HybridSF')
 plt.legend()
 plt.savefig(os.path.join(
     script_dir, "./different_sizes_total_time.svg"), format="svg")
